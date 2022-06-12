@@ -1,0 +1,175 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 12, 2022, 10:04:09 PM
+    Author     : Admin
+*/
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Dancing+Script:wght@500;600&family=Fredericka+the+Great&family=Indie+Flower&family=Kanit&family=Radio+Canada&family=Roboto:ital,wght@0,100;1,100&family=Yanone+Kaffeesatz:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Fredericka+the+Great&family=Indie+Flower&family=Kanit&family=Radio+Canada&family=Roboto:ital,wght@0,100;1,100&display=swap');
+.container-fluid{
+    margin-top: 200px;
+}
+.row{
+    margin-bottom: 30px;
+    margin-left: 0 !important;
+}
+.description-image{
+    height:550px;
+    width:100%;
+    border-radius: 15px;
+    box-shadow:2px 3px 3px 5px rgb(233, 114, 10);
+}
+.product-detail-description.left{
+    text-align:center;
+    border-right: 2px dashed #333;
+    
+}
+.product-image-more{
+    width:100%;
+    display:flex;
+    margin-top:20px;
+    justify-content: center;
+    cursor: pointer;
+}
+.image-more{
+    width:100px;
+    margin-right: 10px;
+}
+.comment-list{
+    width:100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.comment-product{
+    width:100%;
+    text-align: center;
+}
+.comment-form{
+    width:100%;
+}
+.comment-area{
+    width:100%;
+}
+.comment-item{
+    height:70px;
+    background-color:pink;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    width:700px;
+    border-radius: 20px;
+    
+}
+.associate-product{
+    display:block;
+    margin-bottom: 30px;
+    width: 100%;
+}
+.list-product-associate{
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-content: space-between;
+    min-width: 100%;
+    justify-content: center;
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+    .detail-content{
+        display:block;
+    }
+    .product-detail-description.left{
+        margin-bottom:70px;
+        border-right: none;
+    }
+}
+.product-detail-description.right{
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    line-height: 72px;
+    
+}
+.description-text{
+    width: 500px;
+    word-wrap: break-word;
+}
+.title{
+    font-weight:700;
+    font-size: 1.6rem;
+    margin-top: 30px;
+}
+.product-detail-name{
+    font-weight: 900 !important;
+    font-size: 3rem;
+}
+.title-heading{
+    font-size: 3rem;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    text-align: center;
+}
+.btn-action{
+    background-color: rgb(223, 120, 23);
+    color:#fff;
+    border-radius: 15px;
+    width:200px;
+}
+/* Comment */
+.btn-comment{
+     border-radius:10px;
+     padding:5px 10px;
+     background-color: rgb(229, 103, 7);
+     color:#fff;
+}
+.commenter-img{
+    width:70px !important;
+    height:50px;
+}
+.commenter-infor{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height:100%;
+    margin-right: 30px;
+    justify-content:center;
+}
+.associate-product-img{
+    width: 100%;
+    border-radius: 15px;
+}
+.associate-item{
+    position: relative;
+    border-radius: 15px;
+    border:2px solid #333;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+.associate-product-detail{
+    position: absolute;
+    background-color:rgba(40, 33, 33,0.6);
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height: 0;
+    overflow: hidden;
+}
+.associate-item:hover .associate-product-detail{
+    bottom: 0;
+    height:60%;
+    transition: all 0.3s linear 0s ;
+}
+.btn-view{
+    width: 80px;
+    height:50px ;
+    border-radius: 15px;
+   
+}

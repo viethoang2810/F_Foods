@@ -1,0 +1,152 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 12, 2022, 10:06:29 PM
+    Author     : Admin
+*/
+body{
+    background-image:url(https://s1.1zoom.me/b5456/364/Fast_food_French_fries_Beer_Hamburger_Highball_524931_1920x1080.jpg);
+     
+}
+
+
+.container-wrapper{
+    display:flex !important;
+    align-items:center;
+    width: 100vw;
+    height: 100vh;
+    background-color:rgba(15, 14, 14, 0.4);
+    animation: growDown 1s ease;
+   z-index: 3;
+}
+.container{
+    box-shadow: 0 4px 8px 10px rgba(220, 161, 161, 0.9);
+    border-radius: 20px;
+    
+
+}
+
+@keyframes growDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+/* Process slider in login page */
+.login-wrapper{
+    border: 2px solid #333;
+    border-radius:20px;
+}
+.slider{
+    height:100%;
+}
+.slider-side{
+    padding:0 !important;
+}
+.slide-wrapper{
+    width: 100%;
+    overflow: hidden;
+    height:100%;
+}
+.slider-main {
+    display: flex;
+    position: relative;
+    transition: transform 0.5s linear infinite;
+    width: 100%;
+    height:100%;
+
+}
+.slider-item {
+    position: relative;
+    height:100%;
+    left: 0;
+    width: 100%;
+    flex: 1 0 100%;
+    user-select: none;
+    transition: all 0.5s ease-in-out;
+}
+.slider-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+}
+
+/* Process form slider */
+.logo-image{
+    width: 150px;
+    display: flex !important;
+    justify-content: center;
+}
+.logo{
+    display: flex !important;
+    justify-content: center;
+}
+.login-actions{
+    background-color: rgba(207, 142, 22, 0.8);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.form-login{
+    width: 100%;
+}
+.form-wrapper{
+    margin-top: 50px;
+}
+.input-lable{
+    font-weight: 700;
+}
+.input-item{
+    width: 100%;
+    padding:10px;
+    border-radius: 15px;
+}
+.input-block{
+    width: 100%;
+    margin-bottom: 15px;
+}
+.input-text{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.pass-visible{
+    position: absolute;
+    right: 20px;
+    font-size:1.3rem;
+    cursor: pointer;
+}
+.input-submit-btn{
+    text-align:center;
+}
+.submit-btn{
+    padding:10px 30px;
+    background-color:#fff;
+    border-style:none;
+    outline: none;
+}
+.create-account-link{
+    text-align: center;
+    margin-top:30px;
+    height:100px;
+    width:100%;
+}
+.create-account-content{
+    font-size:1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.create-account-content:hover{
+    color: rgb(17, 42, 233);
+
+}
+.disable-form{
+    display: none !important;
+}
