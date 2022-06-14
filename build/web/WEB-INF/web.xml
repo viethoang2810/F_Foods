@@ -4,9 +4,17 @@
         <servlet-name>FoodController</servlet-name>
         <servlet-class>com.fptuni.prj301.F_foods.Controller.FoodController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>HomeController</servlet-name>
+        <servlet-class>com.fptuni.prj301.F_foods.Controller.HomeController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FoodController</servlet-name>
         <url-pattern>/Food/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HomeController</servlet-name>
+        <url-pattern>/Home/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
