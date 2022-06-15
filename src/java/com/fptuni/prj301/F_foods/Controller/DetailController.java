@@ -5,10 +5,8 @@
  */
 package com.fptuni.prj301.F_foods.Controller;
 
-import com.fptuni.prj301.F_foods.DAO.FoodDAO;
-import com.fptuni.prj301.F_foods.DTO.FoodDTO;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Admin
  */
-public class FoodController extends HttpServlet {
+public class DetailController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,29 +30,8 @@ public class FoodController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       ArrayList<FoodDTO> list = new ArrayList<>();
-       FoodDAO dao = new FoodDAO();
-       String sort = request.getParameter("sort");
-       String category = request.getParameter("category");
-       String searchKey = request.getParameter("search") ;
-       String viewDetail = request.getParameter("viewDetails");
-       if(sort == null && category == null && searchKey == null && viewDetail == null){
-           list = dao.getListFood();
-       }
-       if(category !=null){
-           list = dao.getListFoodByCategory(category);
-       }
-       if(searchKey != null){
-           list = dao.getFoodByKey(searchKey);
-       }
-       if(sort != null){
-           list = dao.getListIsSorted(sort);
-       }
-       if(viewDetail != null){
-           request.getRequestDispatcher("/views/DetailProduct.jsp").forward(request, response);
-       }
-       request.setAttribute("listOfFood", list);
-       request.getRequestDispatcher("/views/List.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/DetailProduct.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -9,65 +9,66 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/HomePage.css">
-    <link rel="stylesheet" href="../assets/css/responsive.css">
-    <link rel="stylesheet" href="../assets/css/Main.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="../assets/css/HomePage.css">
+        <link rel="stylesheet" href="../assets/css/responsive.css">
+        <link rel="stylesheet" href="../assets/css/Main.css">
+        <link rel="stylesheet" href="../assets/css/ListOfProduct.css">
 
-    <!-- Bootstrap link embed in here -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        <!-- Bootstrap link embed in here -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-</head>
+    </head>
 
-<body>
-            <%@include file="Layout/Header.jsp" %>
+    <body>
+        <%@include file="Layout/Header.jsp" %>
 
-    <div class="container-fluid" style="z-index: 1;">
-        <div class="row body-row__slider">
-            <div class="slider-side slider-homepage">
-                <div class="slider ">
-                    <div class="slide-wrapper">
-                        <div class="slider-main">
-                            <div class="slider-item">
-                                <img src="../assets/image/Fast-Food-Wallpaper-.jpg" alt="" class="slider-img img-responsive">
+        <div class="container-fluid" style="z-index: 1;">
+            <div class="row body-row__slider">
+                <div class="slider-side slider-homepage">
+                    <div class="slider ">
+                        <div class="slide-wrapper">
+                            <div class="slider-main">
+                                <div class="slider-item">
+                                    <img src="../assets/image/Fast-Food-Wallpaper-.jpg" alt="" class="slider-img img-responsive">
+                                </div>
+                                <div class="slider-item">
+                                    <img src="../assets/image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt="" class="slider-img ">
+                                </div>
+                                <div class="slider-item">
+                                    <img src="../assets/image/milkTea.jpg" alt="" class="slider-img ">
+                                </div>
                             </div>
-                            <div class="slider-item">
-                                <img src="../assets/image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt="" class="slider-img ">
-                            </div>
-                            <div class="slider-item">
-                                <img src="../assets/image/milkTea.jpg" alt="" class="slider-img ">
-                            </div>
+
                         </div>
 
                     </div>
-
+                </div>
+                <div class="slider-dot">
+                    <i class="fa-solid fa-circle-dot dot-slider-handler active"></i>
+                    <i class="fa-solid fa-circle-dot dot-slider-handler"></i>
+                    <i class="fa-solid fa-circle-dot dot-slider-handler"></i>
                 </div>
             </div>
-            <div class="slider-dot">
-                <i class="fa-solid fa-circle-dot dot-slider-handler active"></i>
-                <i class="fa-solid fa-circle-dot dot-slider-handler"></i>
-                <i class="fa-solid fa-circle-dot dot-slider-handler"></i>
+            <div class="tittle-row">
+                <h3 class="about-us-tittle">About us</h3>
             </div>
-        </div>
-        <div class="tittle-row">
-            <h3 class="about-us-tittle">About us</h3>
-        </div>
-        <div class="row body-about-us" id="about-us">
-            <div class="about-us-up">
-                <div class="about-us-infor col-md-7 text-center">
-                    <div class="about-us-infor-tittle">
-                        <h4 class="infor-tittle">Our Stories</h4>
-                    </div>
+            <div class="row body-about-us" id="about-us">
+                <div class="about-us-up">
+                    <div class="about-us-infor col-md-7 text-center">
+                        <div class="about-us-infor-tittle">
+                            <h4 class="infor-tittle">Our Stories</h4>
+                        </div>
 
-                    <pre class="infor-content " style="font-size:0.8rem;">
+                        <pre class="infor-content " style="font-size:0.8rem;">
                      As the old saying should go,“If you want something done right at a fast food restaurant, 
                         do it yourself and risk being arrested.” In March, the employees of 
                         a South Carolina Taco Bell were forced to alert the authorities after a dissatisfied 
@@ -76,69 +77,69 @@
                         the same way every time. And so this iconic hothead took it upon 
                         himself to go behind the counter and make his 
                     meat-laden pie for the road.PS: He got outta dodge before the police could arrest him. 
-                    </pre>
+                        </pre>
 
 
 
 
-                </div>
-                <div class="about-us-images col-md-5 col-sm-3 col-xs-1">
-                    <!-- <img src="image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt="" class="our-image img-responsive"> -->
-                    <div class="slider-side ">
-                        <div class="slider ">
-                            <div class="slide-wrapper">
-                                <div class="slider-main">
-                                    <div class="slider-item">
-                                        <img src="../assets/image/Fast-Food-Wallpaper-.jpg" alt=""
-                                            class="slider-img img-responsive">
+                    </div>
+                    <div class="about-us-images col-md-5 col-sm-3 col-xs-1">
+                        <!-- <img src="image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt="" class="our-image img-responsive"> -->
+                        <div class="slider-side ">
+                            <div class="slider ">
+                                <div class="slide-wrapper">
+                                    <div class="slider-main">
+                                        <div class="slider-item">
+                                            <img src="../assets/image/Fast-Food-Wallpaper-.jpg" alt=""
+                                                 class="slider-img img-responsive">
+                                        </div>
+                                        <div class="slider-item">
+                                            <img src="../assets/image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt=""
+                                                 class="slider-img ">
+                                        </div>
+                                        <div class="slider-item">
+                                            <img src="../assets/image/milkTea.jpg" alt="" class="slider-img ">
+                                        </div>
                                     </div>
-                                    <div class="slider-item">
-                                        <img src="../assets/image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt=""
-                                            class="slider-img ">
-                                    </div>
-                                    <div class="slider-item">
-                                        <img src="../assets/image/milkTea.jpg" alt="" class="slider-img ">
-                                    </div>
+
                                 </div>
 
                             </div>
-
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="about-us-up down-block">
+                <div class="about-us-up down-block">
 
-                <div class="about-us-images col-md-5 col-sm-3 col-xs-1">
-                    <!-- <img src="image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt="" class="our-image img-responsive"> -->
-                    <div class="slider-side ">
-                        <div class="slider ">
-                            <div class="slide-wrapper">
-                                <div class="slider-main">
-                                    <div class="slider-item">
-                                        <img src="../assets/image/Fast-Food-Wallpaper-.jpg" alt=""
-                                            class="slider-img img-responsive">
+                    <div class="about-us-images col-md-5 col-sm-3 col-xs-1">
+                        <!-- <img src="image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt="" class="our-image img-responsive"> -->
+                        <div class="slider-side ">
+                            <div class="slider ">
+                                <div class="slide-wrapper">
+                                    <div class="slider-main">
+                                        <div class="slider-item">
+                                            <img src="../assets/image/Fast-Food-Wallpaper-.jpg" alt=""
+                                                 class="slider-img img-responsive">
+                                        </div>
+                                        <div class="slider-item">
+                                            <img src="../assets/image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt=""
+                                                 class="slider-img ">
+                                        </div>
+                                        <div class="slider-item">
+                                            <img src="../assets/image/milkTea.jpg" alt="" class="slider-img ">
+                                        </div>
                                     </div>
-                                    <div class="slider-item">
-                                        <img src="../assets/image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt=""
-                                            class="slider-img ">
-                                    </div>
-                                    <div class="slider-item">
-                                        <img src="../assets/image/milkTea.jpg" alt="" class="slider-img ">
-                                    </div>
+
                                 </div>
 
                             </div>
-
                         </div>
                     </div>
-                </div>
-                <div class="about-us-infor col-md-7 text-center">
-                    <div class="about-us-infor-tittle">
-                        <h4 class="infor-tittle">Our Mission</h4>
-                    </div>
+                    <div class="about-us-infor col-md-7 text-center">
+                        <div class="about-us-infor-tittle">
+                            <h4 class="infor-tittle">Our Mission</h4>
+                        </div>
 
-                    <pre class="infor-content " style="font-size:0.8rem;">
+                        <pre class="infor-content " style="font-size:0.8rem;">
                      As the old saying should go,“If you want something done right at a fast food restaurant, 
                         do it yourself and risk being arrested.” In March, the employees of 
                         a South Carolina Taco Bell were forced to alert the authorities after a dissatisfied 
@@ -147,114 +148,62 @@
                         the same way every time. And so this iconic hothead took it upon 
                         himself to go behind the counter and make his 
                     meat-laden pie for the road.PS: He got outta dodge before the police could arrest him. 
-                    </pre>
+                        </pre>
 
 
 
 
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="tittle-row">
-            <h3 class="about-us-tittle">Recommended Product</h3>
-        </div>
-        <div class="row body-product">
-            
-                <div class="product-detail col-md-2 col-sm-3">
-                    <div class="product-image">
-                        <img src="../assets/image/milkTea.jpg" alt="" class="image-detail img-responsive">
-                    </div>
-                    <div class="product-infor">
-                        <div class="product-name">
-                            <h6 class="name-detail">Milk tea</h6>
-                        </div>
-                        <div class="product-price">
-                            <div class="price-default">
-                                <span class="price-before price">8.000.000</span>
-                            </div>
-                            <div class="price-discount">
-                                <span class="price-after price">7.000.000</span>
-                            </div>
-                        </div>
-                        <div class="product-voting">
-                            <i class="fa-regular fa-heart"></i>
-                            <i class="fa-regular fa-heart"></i>
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
+            <div class="tittle-row">
+                <h3 class="about-us-tittle">Recommended Product</h3>
+            </div>
+            <div class="row body-product">
+                <div class="product-item-detail col-md-2">
+                    <img src="../assets/image/VNO_fastfood1.jpg" alt="" class="product-item-image">
+                    <div class="product-item-description">
+                        <span class="product-name">Traditional milk tea</span>
+                        <form action="" class="view-detail">
+                            <input type="hidden" name="detail" value="" />
+                            <button type="submit" value="View" class="btn-view">View detail</button>
+                        </form>
                     </div>
                 </div>
-                <div class="product-detail col-md-2 col-sm-3">
-                    <div class="product-image">
-                        <img src="../assets/image/milkTea.jpg" alt="" class="image-detail img-responsive">
-                    </div>
-                    <div class="product-infor">
-                        <div class="product-name">
-                            <h6 class="name-detail">Milk tea</h6>
-                        </div>
-                        <div class="product-price">
-                            <div class="price-default">
-                                <span class="price-before price">8.000.000</span>
-                            </div>
-                            <div class="price-discount">
-                                <span class="price-after price">7.000.000</span>
-                            </div>
-                        </div>
-                        <div class="product-voting">
-                            <i class="fa-regular fa-heart"></i>
-                            <i class="fa-regular fa-heart"></i>
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
+                <div class="product-item-detail col-md-2">
+                    <img src="../assets/image/VNO_fastfood1.jpg" alt="" class="product-item-image">
+                    <div class="product-item-description">
+                        <span class="product-name">Traditional milk tea</span>
+                        <form action="" class="view-detail">
+                            <input type="hidden" name="detail" value="" />
+                            <button type="submit" value="View" class="btn-view">View detail</button>
+                        </form>
                     </div>
                 </div>
-                <div class="product-detail col-md-2 col-sm-3">
-                    <div class="product-image">
-                        <img src="../assets/image/milkTea.jpg" alt="" class="image-detail img-responsive">
+                <div class="product-item-detail col-md-2">
+                    <img src="../assets/image/VNO_fastfood1.jpg" alt="" class="product-item-image">
+                    <div class="product-item-description">
+                        <span class="product-name">Traditional milk tea</span>
+                        <form action="" class="view-detail">
+                            <input type="hidden" name="detail" value="" />
+                            <button type="submit" value="View" class="btn-view">View detail</button>
+                        </form>
                     </div>
-                    <div class="product-infor">
-                        <div class="product-name">
-                            <h6 class="name-detail">Milk tea</h6>
-                        </div>
-                        <div class="product-price">
-                            <div class="price-default">
-                                <span class="price-before price">8.000.000</span>
-                            </div>
-                            <div class="price-discount">
-                                <span class="price-after price">7.000.000</span>
-                            </div>
-                        </div>
-                        <div class="product-voting">
-                            <i class="fa-regular fa-heart"></i>
-                            <i class="fa-regular fa-heart"></i>
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
+                </div><!-- comment -->
+                <div class="product-item-detail col-md-2">
+                    <img src="../assets/image/VNO_fastfood1.jpg" alt="" class="product-item-image">
+                    <div class="product-item-description">
+                        <span class="product-name">Traditional milk tea</span>
+                        <form action="" class="view-detail">
+                            <input type="hidden" name="detail" value="" />
+                            <button type="submit" value="View" class="btn-view">View detail</button>
+                        </form>
                     </div>
                 </div>
-                <div class="product-detail col-md-2 col-sm-3">
-                    <div class="product-image">
-                        <img src="../assets/image/milkTea.jpg" alt="" class="image-detail img-responsive">
-                    </div>
-                    <div class="product-infor">
-                        <div class="product-name">
-                            <h6 class="name-detail">Milk tea</h6>
-                        </div>
-                        <div class="product-price">
-                            <div class="price-default">
-                                <span class="price-before price">8.000.000</span>
-                            </div>
-                            <div class="price-discount">
-                                <span class="price-after price">7.000.000</span>
-                            </div>
-                        </div>
-                        <div class="product-voting">
-                            <i class="fa-regular fa-heart"></i>
-                            <i class="fa-regular fa-heart"></i>
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
+            </div>
             <div class="view-more-product">
                 <span class="view-more-content">
-                    <a href="?view=more" class="view-more-link">View more product</a>
+                    <a href="../Food/list" class="view-more-link">View more product</a>
                     <button class="view-more-btn">
                         <i class="fa-solid fa-angles-right"></i>
                     </button>
@@ -305,7 +254,7 @@
                             <div class="review-slider-item comment">
                                 <div class="review-slider-item-image">
                                     <img src="../assets/image/Fast-Food-Wallpaper-.jpg" alt=""
-                                        class="review-slider-img rounded-circle">
+                                         class="review-slider-img rounded-circle">
                                 </div>
                                 <div class="slider-comment-content">
                                     <span class="comment-content-detail">Please excuse the partial cup in pic, forgot to
@@ -315,7 +264,7 @@
                             <div class="review-slider-item comment">
                                 <div class="review-slider-item-image">
                                     <img src="../assets/image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt=""
-                                        class="review-slider-img rounded-circle">
+                                         class="review-slider-img rounded-circle">
                                 </div>
                                 <div class="slider-comment-content">
                                     <span class="comment-content-detail">Please excuse the partial cup in pic, forgot to
@@ -325,7 +274,7 @@
                             <div class="review-slider-item comment">
                                 <div class="review-slider-item-image">
                                     <img src="../assets/image/Fast-Food-Wallpaper-.jpg" alt=""
-                                        class="review-slider-img rounded-circle">
+                                         class="review-slider-img rounded-circle">
                                 </div>
                                 <div class="slider-comment-content">
                                     <span class="comment-content-detail">Please excuse the partial cup in pic, forgot to
@@ -447,7 +396,7 @@
             </footer>
         </div>
     </div>
-    
+
 </body>
 <script src="javascript/HomePage.js"></script>
 
