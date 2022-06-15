@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="../assets/css/HomePage.css">
         <link rel="stylesheet" href="../assets/css/ListOfProduct.css">
         <link rel="stylesheet" href="../assets/css/Main.css">
-        <link rel="icon" href="../assets/image/logo_transparent.png" type="image/x-icon">
+        <link rel="icon" href="./assets/image/logo_transparent.png" type="image/x-icon">
 
         <!-- Bootstrap link embed in here -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -173,6 +173,7 @@
                                         <h5 class="widget-title">Contact Us<span></span></h5>
                                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                                         <div class="emailfield">
+                                            <form>
                                             <input type="text" name="email" value="Email">
                                             <input name="uri" type="hidden" value="arabiantheme">
                                             <input name="loc" type="hidden" value="en_US">
@@ -197,8 +198,7 @@
                 </footer>
             </div>
         </div>
-            <%@include file="Layout/Footer.jsp" %>
-
+        <%@include file="Layout/Footer.jsp" %>
     </body>
     <script src="javascript/ListOfProduct.js"></script>
 </html>

@@ -28,6 +28,8 @@
 </head>
 
 <body>
+            <%@include file="Layout/Header.jsp" %>
+
     <div class="container-fluid" style="z-index: 1;">
         <div class="row body-row__slider">
             <div class="slider-side slider-homepage">
@@ -35,13 +37,13 @@
                     <div class="slide-wrapper">
                         <div class="slider-main">
                             <div class="slider-item">
-                                <img src="image/Fast-Food-Wallpaper-.jpg" alt="" class="slider-img img-responsive">
+                                <img src="../assets/image/Fast-Food-Wallpaper-.jpg" alt="" class="slider-img img-responsive">
                             </div>
                             <div class="slider-item">
-                                <img src="image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt="" class="slider-img ">
+                                <img src="../assets/image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt="" class="slider-img ">
                             </div>
                             <div class="slider-item">
-                                <img src="image/milkTea.jpg" alt="" class="slider-img ">
+                                <img src="../assets/image/milkTea.jpg" alt="" class="slider-img ">
                             </div>
                         </div>
 
@@ -87,15 +89,15 @@
                             <div class="slide-wrapper">
                                 <div class="slider-main">
                                     <div class="slider-item">
-                                        <img src="image/Fast-Food-Wallpaper-.jpg" alt=""
+                                        <img src="../assets/image/Fast-Food-Wallpaper-.jpg" alt=""
                                             class="slider-img img-responsive">
                                     </div>
                                     <div class="slider-item">
-                                        <img src="image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt=""
+                                        <img src="../assets/image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt=""
                                             class="slider-img ">
                                     </div>
                                     <div class="slider-item">
-                                        <img src="image/milkTea.jpg" alt="" class="slider-img ">
+                                        <img src="../assets/image/milkTea.jpg" alt="" class="slider-img ">
                                     </div>
                                 </div>
 
@@ -114,15 +116,15 @@
                             <div class="slide-wrapper">
                                 <div class="slider-main">
                                     <div class="slider-item">
-                                        <img src="image/Fast-Food-Wallpaper-.jpg" alt=""
+                                        <img src="../assets/image/Fast-Food-Wallpaper-.jpg" alt=""
                                             class="slider-img img-responsive">
                                     </div>
                                     <div class="slider-item">
-                                        <img src="image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt=""
+                                        <img src="../assets/image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt=""
                                             class="slider-img ">
                                     </div>
                                     <div class="slider-item">
-                                        <img src="image/milkTea.jpg" alt="" class="slider-img ">
+                                        <img src="../assets/image/milkTea.jpg" alt="" class="slider-img ">
                                     </div>
                                 </div>
 
@@ -160,7 +162,7 @@
             
                 <div class="product-detail col-md-2 col-sm-3">
                     <div class="product-image">
-                        <img src="image/milkTea.jpg" alt="" class="image-detail img-responsive">
+                        <img src="../assets/image/milkTea.jpg" alt="" class="image-detail img-responsive">
                     </div>
                     <div class="product-infor">
                         <div class="product-name">
@@ -183,7 +185,7 @@
                 </div>
                 <div class="product-detail col-md-2 col-sm-3">
                     <div class="product-image">
-                        <img src="image/milkTea.jpg" alt="" class="image-detail img-responsive">
+                        <img src="../assets/image/milkTea.jpg" alt="" class="image-detail img-responsive">
                     </div>
                     <div class="product-infor">
                         <div class="product-name">
@@ -206,7 +208,7 @@
                 </div>
                 <div class="product-detail col-md-2 col-sm-3">
                     <div class="product-image">
-                        <img src="image/milkTea.jpg" alt="" class="image-detail img-responsive">
+                        <img src="../assets/image/milkTea.jpg" alt="" class="image-detail img-responsive">
                     </div>
                     <div class="product-infor">
                         <div class="product-name">
@@ -229,7 +231,7 @@
                 </div>
                 <div class="product-detail col-md-2 col-sm-3">
                     <div class="product-image">
-                        <img src="image/milkTea.jpg" alt="" class="image-detail img-responsive">
+                        <img src="../assets/image/milkTea.jpg" alt="" class="image-detail img-responsive">
                     </div>
                     <div class="product-infor">
                         <div class="product-name">
@@ -302,7 +304,7 @@
                         <div class="review-slider-main">
                             <div class="review-slider-item comment">
                                 <div class="review-slider-item-image">
-                                    <img src="image/Fast-Food-Wallpaper-.jpg" alt=""
+                                    <img src="../assets/image/Fast-Food-Wallpaper-.jpg" alt=""
                                         class="review-slider-img rounded-circle">
                                 </div>
                                 <div class="slider-comment-content">
@@ -312,7 +314,7 @@
                             </div>
                             <div class="review-slider-item comment">
                                 <div class="review-slider-item-image">
-                                    <img src="image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt=""
+                                    <img src="../assets/image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt=""
                                         class="review-slider-img rounded-circle">
                                 </div>
                                 <div class="slider-comment-content">
@@ -322,7 +324,7 @@
                             </div>
                             <div class="review-slider-item comment">
                                 <div class="review-slider-item-image">
-                                    <img src="image/Fast-Food-Wallpaper-.jpg" alt=""
+                                    <img src="../assets/image/Fast-Food-Wallpaper-.jpg" alt=""
                                         class="review-slider-img rounded-circle">
                                 </div>
                                 <div class="slider-comment-content">
