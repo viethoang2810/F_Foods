@@ -84,7 +84,7 @@
                                     <form action="" class="view-detail">
                                         <input type="hidden" name="detail" value="" />
                                         <button type="submit" value="View" class="btn-view" name="viewDetails">
-                                            <a href="../Detail/list">View detail</a>
+                                            <a href="../Detail/detailFood?detail=${food.foodID}">View detail</a>
                                     </form>
                                 </div>
                             </div>

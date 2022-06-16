@@ -41,7 +41,7 @@ public class FoodDAO {
                 f.setCategory(rs.getString("Category"));
                 f.setOriginalPrice(rs.getInt("OriginalPrice"));
                 f.setDiscountPrice(rs.getInt("DiscountPrice"));
-                f.setDiscountPrice(rs.getInt("FinalPrice"));
+                f.setFinalPrice(rs.getInt("FinalPrice"));
 
                 list.add(f);
 
@@ -73,7 +73,8 @@ public class FoodDAO {
                 f.setCategory(rs.getString("Category"));
                 f.setOriginalPrice(rs.getInt("OriginalPrice"));
                 f.setDiscountPrice(rs.getInt("DiscountPrice"));
-                f.setDiscountPrice(rs.getInt("FinalPrice"));
+                                f.setFinalPrice(rs.getInt("FinalPrice"));
+
 
                 list.add(f);
 
@@ -104,7 +105,8 @@ public class FoodDAO {
                 f.setCategory(rs.getString("Category"));
                 f.setOriginalPrice(rs.getInt("OriginalPrice"));
                 f.setDiscountPrice(rs.getInt("DiscountPrice"));
-                f.setDiscountPrice(rs.getInt("FinalPrice"));
+                                f.setFinalPrice(rs.getInt("FinalPrice"));
+
 
                 list.add(f);
 
@@ -136,7 +138,8 @@ public class FoodDAO {
                 f.setCategory(rs.getString("Category"));
                 f.setOriginalPrice(rs.getInt("OriginalPrice"));
                 f.setDiscountPrice(rs.getInt("DiscountPrice"));
-                f.setDiscountPrice(rs.getInt("FinalPrice"));
+                                f.setFinalPrice(rs.getInt("FinalPrice"));
+
 
                 list.add(f);
 

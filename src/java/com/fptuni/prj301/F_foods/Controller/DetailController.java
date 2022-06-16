@@ -5,8 +5,11 @@
  */
 package com.fptuni.prj301.F_foods.Controller;
 
+import com.fptuni.prj301.F_foods.DAO.DetailFoodDAO;
+import com.fptuni.prj301.F_foods.DAO.FoodDAO;
+import com.fptuni.prj301.F_foods.DTO.FoodDTO;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,6 +33,15 @@ public class DetailController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        String detailFoodId = request.getParameter("detail");
+        DetailFoodDAO detail = new DetailFoodDAO();
+        FoodDAO foodDao = new FoodDAO();
+        ArrayList<FoodDTO> list = foodDao.getListFood();
+        FoodDTO food = detail.getFoodById(Integer.parseInt(detailFoodId));
+        ArrayList<FoodDTO> randomArray = detail.getFoodArrayRandom(list);
+        
+        request.setAttribute("randomFood", randomArray);
+        request.setAttribute("foodDetail", food);
         request.getRequestDispatcher("/views/DetailProduct.jsp").forward(request, response);
 
     }

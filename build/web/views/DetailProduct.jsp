@@ -25,32 +25,32 @@
     </head>
 
     <body>
+        <%@include file="Layout/Header.jsp" %>
         <div class="container-fluid">
             <div class="row detail-content">
                 <div class="product-detail-description left col-md-7 col-sm-12 col-xs 12 ">
-                    <img src="" alt="" class="description-image ">
+                    <img src="${foodDetail.imgLink1}" alt="" class="description-image ">
                     <div class="product-image-more hover-zoom">
-                        <img src="../assets/image/milkTea.jpg" alt="" class="image-more ">
-                        <img src="../assets/image/VNO_fastfood1.jpg" alt="" class="image-more">
-                        <img src="../assets/image/VNO_fastfood1.jpg" alt="" class="image-more">
-                        <img src="../assets/image/VNO_fastfood1.jpg" alt="" class="image-more">
+                        <img src="${foodDetail.imgLink1}" alt="" class="image-more">
+                        <img src="${foodDetail.imgLink2}" alt="" class="image-more">
+                        <img src="${foodDetail.imgLink3}" alt="" class="image-more">
                     </div>
                 </div>
                 <div class="product-detail-description right col-md-5 col-sm-12 col-xs 12">
-                    <h3 class="product-detail-name title">Traditional Milk Tea</h3>
+                    <h3 class="product-detail-name title">${foodDetail.foodName}</h3>
                     <div class="description-content">
                         <h5 class="description-title title">Description</h5>
-                        <p class="description-text">sigdysduihfsdfhsduoifhusdfhsdufhsdfsdhfiusdhfsdiuhf</p>
+                        <p class="description-text">${foodDetail.description}</p>
                     </div>
                     <div class="product-infor-more">
                         <h5 class="total-selling-title title">Price :</h5>
-                        <span class="original-price" style="text-decoration: line-through;"> 200.000</span>
+                        <span class="original-price" style="text-decoration: line-through;">${foodDetail.originalPrice}</span>
                         </br>
-                        <span class="total-selling-amount">100.000</span>
+                        <span class="total-selling-amount">${foodDetail.finalPrice}</span>
                     </div>
                     <div class="cart-order-product">
                         <form action="" class="buying-form">
-                            <input type="hidden" name="foodId" value="">;s
+                            <input type="hidden" name="foodId" value="">
                             <button type="submit" name="addCart " class="btn-buying btn-action">
                                 <i class="fa-solid fa-cart-plus"></i>
                                 <span class="addCart-content">Add to your cart</span>
@@ -164,78 +164,10 @@
 
                 </div>
             </div>
-            <div class="row footer-container">
-                <footer id="footer" class="footer-1">
-                    <div class="main-footer widgets-dark typo-light">
-                        <div class="container">
-                            <div class="row">
 
-                                <div class="col-xs-12 col-sm-6 col-md-3">
-                                    <div class="widget subscribe no-box">
-                                        <h5 class="widget-title">F-Foods<span></span></h5>
-                                        <p>About the company, little description will goes here.. </p>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-xs-12 col-sm-6 col-md-3">
-                                    <!-- <div class="widget no-box">
-                                        <h5 class="widget-title">Quick Links<span></span></h5>
-                                        <ul class="thumbnail-widget">
-                                            <li>
-                                                <div class="thumb-content"><a href="#.">&nbsp;Get Started</a></div>
-                                            </li>
-                                            <li>
-                                                <div class="thumb-content"><a href="#.">&nbsp;Top Leaders</a></div>
-                                            </li>
-                                            <li>
-                                        </ul>
-                                    </div> -->
-                                </div>
-
-
-
-                                <div class="col-xs-12 col-sm-6 col-md-3">
-                                    <div class="widget no-box">
-                                        <h5 class="widget-title">Follow up<span></span></h5>
-                                        <a href="#"> <i class="fa fa-facebook"> </i> </a>
-                                        <a href="#"> <i class="fa fa-twitter"> </i> </a>
-                                        <a href="#"> <i class="fa fa-youtube"> </i> </a>
-                                    </div>
-                                </div>
-                                <br>
-                                <br>
-
-
-                                <div class="col-xs-12 col-sm-6 col-md-3">
-                                    <div class="widget no-box">
-                                        <h5 class="widget-title">Contact Us<span></span></h5>
-                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                                        <div class="emailfield">
-                                            <input type="text" name="email" value="Email">
-                                            <input name="uri" type="hidden" value="arabiantheme">
-                                            <input name="loc" type="hidden" value="en_US">
-                                            <input class="submitbutton ripplelink" type="submit" value="Subscribe">
-                                            </form>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- <div class="footer-copyright">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-12 text-center">
-                                        <p>Copyright Design Sherif Hamdy © 2019. All rights reserved.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                </footer>
-            </div>
         </div>
+        <%@include file="Layout/Footer.jsp" %>
+
     </body>
     <script src="javascript/DetailProduct.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

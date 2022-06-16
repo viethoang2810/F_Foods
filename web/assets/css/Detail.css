@@ -9,9 +9,7 @@ and open the template in the editor.
 */
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Dancing+Script:wght@500;600&family=Fredericka+the+Great&family=Indie+Flower&family=Kanit&family=Radio+Canada&family=Roboto:ital,wght@0,100;1,100&family=Yanone+Kaffeesatz:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Fredericka+the+Great&family=Indie+Flower&family=Kanit&family=Radio+Canada&family=Roboto:ital,wght@0,100;1,100&display=swap');
-.container-fluid{
-    margin-top: 200px;
-}
+
 .row{
     margin-bottom: 30px;
     margin-left: 0 !important;
