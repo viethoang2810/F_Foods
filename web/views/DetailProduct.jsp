@@ -50,8 +50,8 @@
                     </div>
                     <div class="cart-order-product">
                         <form action="" class="buying-form">
-                            <input type="hidden" name="foodId" value="">
-                            <button type="submit" name="addCart " class="btn-buying btn-action">
+                            <input type="hidden" name="foodId" value="${foodDetail.foodID}">
+                            <button type="submit" name="addCart" class="btn-buying btn-action" value="add">
                                 <i class="fa-solid fa-cart-plus"></i>
                                 <span class="addCart-content">Add to your cart</span>
                             </button>
@@ -167,8 +167,7 @@
 
         </div>
         <%@include file="Layout/Footer.jsp" %>
-
     </body>
-    <script src="javascript/DetailProduct.js"></script>
+    <script src="../assets/javascript/DetailProduct.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </html>

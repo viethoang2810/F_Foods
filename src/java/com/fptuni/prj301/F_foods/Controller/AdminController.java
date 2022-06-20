@@ -5,8 +5,8 @@
  */
 package com.fptuni.prj301.F_foods.Controller;
 
+import com.fptuni.prj301.F_foods.DTO.UserDTO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Admin
  */
-public class HomeController extends HttpServlet {
+public class AdminController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,16 +31,11 @@ public class HomeController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String logout = request.getParameter("logout");
-
-        if (logout != null) {
-            HttpSession ss = request.getSession();
-            ss.setAttribute("usersession", null);
-            response.sendRedirect("../Access/Login");
-            return;
-        }
-        request.getRequestDispatcher("/views/HomePage.jsp").forward(request, response);
+        HttpSession ss = request.getSession();
+        UserDTO us = (UserDTO) ss.getAttribute("usersession");
         
+        request.setAttribute("user", us);
+        request.getRequestDispatcher("/views/Admin.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

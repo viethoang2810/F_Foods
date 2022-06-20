@@ -29,7 +29,9 @@ public class UserDTO {
         this.cart = cart;
     }
 
-    public UserDTO(String username, String password, String phoneNumber, String accessRight, ArrayList<FoodDTO> cart, Date dateCreateAccount) {
+   
+    
+    public UserDTO(String username, String phoneNumber, String accessRight, ArrayList<FoodDTO> cart, Date dateCreateAccount) {
         this.username = username;
         this.password = password;
         this.phoneNumber = phoneNumber;

@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,7 +16,7 @@
         <title>Header</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <link rel="stylesheet" href="../assets/css/HomePage.css">
-        <link rel="stylesheet" href="../assets/css/responsive.css">
+        <link rel="stylesheet" href="../assets/css/Responsive.css">
         <!-- Bootstrap link embed in here -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -61,11 +63,15 @@
                                 </div>
                             </div>
                             <div class="header-right-account right-side">
-                                <div class="account-avatar">
-                                    <i class="fa-solid fa-user-tie"></i>
-                                </div>
+                                <jsp:useBean id="usersession" class="com.fptuni.prj301.F_foods.DTO.UserDTO" scope="session"/>
+
                                 <div class="account-infor">
-                                    <span class="account-infor__name">User</span>
+                                    <span class="account-infor__name">${usersession.username}</span>
+                                     <div class="logout-wrapper text-center">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                    <a href="?logout=true" class="logout-link "
+                                        style="text-decoration:none ;color:#fff;">Log out</a>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -74,6 +80,6 @@
             </div>
         </div>
     </body>
-    <script src="javascript/HomePage.js"></script>
+    <script src="../assets/javascript/HomePage.js"></script>
 
 </html>

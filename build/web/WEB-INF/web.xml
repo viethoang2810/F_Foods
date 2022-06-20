@@ -12,6 +12,18 @@
         <servlet-name>DetailController</servlet-name>
         <servlet-class>com.fptuni.prj301.F_foods.Controller.DetailController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AccessController</servlet-name>
+        <servlet-class>com.fptuni.prj301.F_foods.Controller.AccessController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckoutController</servlet-name>
+        <servlet-class>com.fptuni.prj301.F_foods.Controller.CheckoutController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminController</servlet-name>
+        <servlet-class>com.fptuni.prj301.F_foods.Controller.AdminController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FoodController</servlet-name>
         <url-pattern>/Food/*</url-pattern>
@@ -23,6 +35,18 @@
     <servlet-mapping>
         <servlet-name>DetailController</servlet-name>
         <url-pattern>/Detail/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccessController</servlet-name>
+        <url-pattern>/Access/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckoutController</servlet-name>
+        <url-pattern>/Checkout/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminController</servlet-name>
+        <url-pattern>/Management/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
