@@ -5,6 +5,7 @@
  */
 package com.fptuni.prj301.F_foods.DAO;
 
+import com.fptuni.prj301.F_foods.DTO.CommentDTO;
 import com.fptuni.prj301.F_foods.DTO.FoodDTO;
 import com.fptuni.prj301.F_foods.Utils.DBUtils;
 import java.sql.Connection;
@@ -20,6 +21,7 @@ public class DetailFoodDAO {
 
     FoodDTO food = new FoodDTO();
     ArrayList<FoodDTO> randomFoodArray = new ArrayList<>();
+    ArrayList<CommentDTO> listOfComment = new ArrayList<>();
 
     public FoodDTO getFoodById(int id) {
         Connection con = null;
@@ -51,12 +53,57 @@ public class DetailFoodDAO {
     }
 
     public ArrayList<FoodDTO> getFoodArrayRandom(ArrayList<FoodDTO> list) {
-        int index = (int) Math.ceil(Math.random() * list.size());
-        while (randomFoodArray.size() < 4) {
-            randomFoodArray.add((list.get(index)));
+        int index = (int) Math.floor(Math.random() * list.size());
+        while (randomFoodArray.size() <= 3) {
+            randomFoodArray.add(list.get(index));
             index = (int) Math.ceil(Math.random() * list.size());
         }
         return randomFoodArray;
+    }
+
+    public boolean insertComment(int id, String content, String user) {
+        Connection con = null;
+        PreparedStatement stm = null;
+        int checkInsert = 0;
+        String sql = "INSERT INTO [CommentFood] (CustomerName,FoodID,CommentContent) VALUES (?,?,?)";
+        try {
+            con = DBUtils.getConnection();
+            stm = con.prepareStatement(sql);
+            stm.setString(1, user);
+            stm.setInt(2, id);
+            stm.setString(3, content);
+            checkInsert = stm.executeUpdate();
+            if (checkInsert > 0) {
+                return true;
+            }
+
+        } catch (Exception e) {
+        }
+        return false;
+    }
+
+    public ArrayList<CommentDTO> getListComment(String detailFoodId) {
+        String sql = "SELECT CustomerName ,CommentContent, DateOfComment\n"
+                + "FROM CommentFood WHERE FoodID = ?";
+        Connection con = null;
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        try {
+            con = DBUtils.getConnection();
+            stm = con.prepareStatement(sql);
+            stm.setInt(1, Integer.parseInt(detailFoodId));
+            rs = stm.executeQuery();
+            while(rs.next()){
+                CommentDTO comment = new CommentDTO();
+                comment.setUsername(rs.getString("CustomerName"));
+                comment.setContent(rs.getString("CommentContent"));
+                comment.setDateOfComment(rs.getDate("DateOfComment"));
+                
+                listOfComment.add(comment);
+            }
+        } catch (Exception e) {
+        }
+        return listOfComment;
     }
 
 }

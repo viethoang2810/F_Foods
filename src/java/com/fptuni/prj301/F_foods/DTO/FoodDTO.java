@@ -37,6 +37,14 @@ public class FoodDTO {
         this.finalPrice = finalPrice;
     }
 
+    public FoodDTO(String foodName, int discountPrice, int finalPrice) {
+        this.foodName = foodName;
+        this.discountPrice = discountPrice;
+        this.finalPrice = finalPrice;
+    }
+    
+    
+    
     public int getFoodID() {
         return foodID;
     }

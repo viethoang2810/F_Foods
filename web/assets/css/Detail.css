@@ -139,6 +139,7 @@ and open the template in the editor.
 .associate-product-img{
     width: 100%;
     border-radius: 15px;
+    height: 100%;
 }
 .associate-item{
     position: relative;
@@ -170,4 +171,7 @@ and open the template in the editor.
     height:50px ;
     border-radius: 15px;
    
+}
+.date-of-comment{
+    color:rgb(91, 90, 90);
 }

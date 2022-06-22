@@ -67,100 +67,48 @@
             <div class="row comment-product ">
                 <h3 class="comment-title title-heading">Comment</h3>
                 <div class="comment-form">
-                    <form action="" class="comment-area">
-                        <textarea rows="8" cols="100" name="comment" form="comment-area" placeholder="Enter your comment"
-                                  class="form-control"></textarea>
-                        <button type="submit" class="btn-comment">Comment</button>
+                    <form action="${request.contextPath()}" class="comment-area">
+                        <input type="hidden" name="detail" value="${foodDetail.foodID}">
+                        <input type="hidden" name="user" value="${usersession.username}">
+                        <input type="hidden" name="id" value="${foodDetail.foodID}">
+                        <textarea rows="8" cols="100" name="contentOfComment"  placeholder="Enter your comment"
+                                  class="form-control" ></textarea>
+                        <button type="submit" class="btn-comment" name="comment" value="add">Comment</button>
                     </form>
                 </div>
-                <div class="comment-list">
+                <div class="comment-list" style="margin-top: 20px;">
                     <div class="comment-wrapper">
-                        <div class="comment-item ">
-                            <div class="commenter-infor col-md-2">
-                                <img src="image/Fast-Food-Wallpaper-.jpg" alt="" class="commenter-img  rounded-circle">
+                        <c:forEach var="comment" items="${listComment}" >
+                            <div class="comment-item ">
+                                <div class="commenter-infor col-md-2">
+                                    <span class="user-comment-name">${comment.username}</span>
+                                </div>
+                                <div class="comment-content">
+                                    <p class="date-of-comment" style="text-align: left;">${comment.dateOfComment}</p>
+                                    <span class="comment-line">${comment.content}</span>
+                                </div>
                             </div>
-                            <div class="comment-content">
-                                <span class="comment-line">gióhbudgysgfdsgfysdgfyisdgfyisd</span>
-                            </div>
-                        </div>
-                        <div class="comment-item ">
-                            <div class="commenter-infor col-md-2">
-                                <img src="image/Fast-Food-Wallpaper-.jpg" alt="" class="commenter-img  rounded-circle">
-                            </div>
-                            <div class="comment-content">
-                                <span class="comment-line">gióhbudgysgfdsgfysdgfyisdgfyisd</span>
-                            </div>
-                        </div>
-                        <div class="comment-item ">
-                            <div class="commenter-infor col-md-2">
-                                <img src="image/Fast-Food-Wallpaper-.jpg" alt="" class="commenter-img  rounded-circle">
-                            </div>
-                            <div class="comment-content">
-                                <span class="comment-line">gióhbudgysgfdsgfysdgfyisdgfyisd</span>
-                            </div>
-                        </div>
-                        <div class="comment-item ">
-                            <div class="commenter-infor col-md-2">
-                                <img src="image/Fast-Food-Wallpaper-.jpg" alt="" class="commenter-img  rounded-circle">
-                            </div>
-                            <div class="comment-content">
-                                <span class="comment-line">gióhbudgysgfdsgfysdgfyisdgfyisd</span>
-                            </div>
-                        </div>
-                        <div class="comment-item ">
-                            <div class="commenter-infor col-md-2">
-                                <img src="image/Fast-Food-Wallpaper-.jpg" alt="" class="commenter-img  rounded-circle">
-                            </div>
-                            <div class="comment-content">
-                                <span class="comment-line">gióhbudgysgfdsgfysdgfyisdgfyisd</span>
-                            </div>
-                        </div>
+                        </c:forEach>
                     </div>
                 </div>
             </div>
             <div class="row associate-product">
                 <h3 class="list-title title-heading">Associated Products</h3>
                 <div class="list-product-associate">
-                    <div class="associate-item col-lg-2 col-md-4 col-sm-6 col-xs-12">
-                        <img src="image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt="" class="associate-product-img">
-                        <div class="associate-product-detail">
-                            <span class="associate-product-name">Traditional Milk Tea</span>
-                            <form action="" class="view-detail">
-                                <input type="hidden" name="detail" value="" />
-                                <button type="submit" value="View" class="btn-view">View</button>
-                            </form>
+                    <c:forEach var="random" items="${randomFood}" varStatus="loop">
+                        <div class="associate-item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+                            <img src="${random.imgLink1}" alt="" class="associate-product-img">
+                            <div class="associate-product-detail">
+                                <span class="associate-product-name">${random.foodName}</span>
+                                <form action="" class="view-detail">
+                                    <input type="hidden" name="detail" value="${random.foodID}" />
+                                    <button type="submit" value="View" class="btn-view">View</button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                    <div class="associate-item col-lg-2 col-md-4 col-sm-6 col-xs-12">
-                        <img src="image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt="" class="associate-product-img">
-                        <div class="associate-product-detail">
-                            <span class="associate-product-name">Traditional Milk Tea</span>
-                            <form action="" class="view-detail">
-                                <input type="hidden" name="detail" value="" />
-                                <button type="submit" value="View" class="btn-view">View</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="associate-item col-lg-2 col-md-4 col-sm-6 col-xs-12">
-                        <img src="image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt="" class="associate-product-img">
-                        <div class="associate-product-detail">
-                            <span class="associate-product-name">Traditional Milk Tea</span>
-                            <form action="" class="view-detail">
-                                <input type="hidden" name="detail" value="" />
-                                <button type="submit" value="View" class="btn-view">View</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="associate-item col-lg-2 col-md-4 col-sm-6 col-xs-12">
-                        <img src="image/hotdog-com-vn-cach-lam-hot-dog-3.jpg" alt="" class="associate-product-img">
-                        <div class="associate-product-detail">
-                            <span class="associate-product-name">Traditional Milk Tea</span>
-                            <form action="" class="view-detail">
-                                <input type="hidden" name="detail" value="" />
-                                <button type="submit" value="View" class="btn-view">View</button>
-                            </form>
-                        </div>
-                    </div>
+
+                    </c:forEach>
+
 
                 </div>
             </div>

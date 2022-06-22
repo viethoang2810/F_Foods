@@ -7,7 +7,9 @@ package com.fptuni.prj301.F_foods.Controller;
 
 import com.fptuni.prj301.F_foods.DAO.DetailFoodDAO;
 import com.fptuni.prj301.F_foods.DAO.FoodDAO;
+import com.fptuni.prj301.F_foods.DTO.CommentDTO;
 import com.fptuni.prj301.F_foods.DTO.FoodDTO;
+import com.fptuni.prj301.F_foods.DTO.UserDTO;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
@@ -36,10 +38,31 @@ public class DetailController extends HttpServlet {
         String detailFoodId = request.getParameter("detail");
         DetailFoodDAO detail = new DetailFoodDAO();
         FoodDAO foodDao = new FoodDAO();
+        UserDTO dto = new UserDTO();
+        ArrayList<CommentDTO> listOfComment = new ArrayList<>();
         ArrayList<FoodDTO> list = foodDao.getListFood();
         FoodDTO food = detail.getFoodById(Integer.parseInt(detailFoodId));
         ArrayList<FoodDTO> randomArray = detail.getFoodArrayRandom(list);
-        
+        String comment = request.getParameter("comment");
+
+        if (comment != null) {
+            String id = request.getParameter("id");
+            String content = request.getParameter("contentOfComment");
+            String user = request.getParameter("user");
+            boolean check = detail.insertComment(Integer.parseInt(id), content, user);
+            response.sendRedirect("../Detail/detailFood?detail=" + detailFoodId);
+            return;
+        }
+        if (request.getParameter("addCart") != null) {
+            String foodId = request.getParameter("foodId");
+            FoodDTO item = detail.getFoodById(Integer.parseInt(foodId));
+            ArrayList<FoodDTO> cart = dto.getCart();
+            response.sendRedirect("../Detail/detailFood?detail=" + foodId);
+            return;
+            
+        }
+        listOfComment = detail.getListComment(detailFoodId);
+        request.setAttribute("listComment", listOfComment);
         request.setAttribute("randomFood", randomArray);
         request.setAttribute("foodDetail", food);
         request.getRequestDispatcher("/views/DetailProduct.jsp").forward(request, response);

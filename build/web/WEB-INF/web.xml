@@ -37,6 +37,10 @@
         <url-pattern>/Detail/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>DetailController</servlet-name>
+        <url-pattern>/comment*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>AccessController</servlet-name>
         <url-pattern>/Access/*</url-pattern>
     </servlet-mapping>
