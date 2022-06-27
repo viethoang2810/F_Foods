@@ -31,8 +31,11 @@
                         <span class="account-name">Administrator</span>
                         <div class="account-admin-detail">
                             <div class="account-detail" style="background-color:black;">
-                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                                <span class="log-out">Log-out</span>
+                                <a href="?logout=true">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                    <span class="log-out">Log-out</span>
+                                </a>
+
                             </div>
                         </div>
                     </div>
@@ -286,78 +289,78 @@
                             </thead>
                             <tbody>
                                 <c:forEach var="food" items="${foodList}">
-                                     <tr class="table-row row-food-detail">
-                                    <td class="food-id">${food.foodID}</td>
-                                    <td class="food-name">${food.foodName}</td>
+                                    <tr class="table-row row-food-detail">
+                                        <td class="food-id">${food.foodID}</td>
+                                        <td class="food-name">${food.foodName}</td>
 
-                                    <td class="food-price">${food.originalPrice}</td>
-                                    <td class="food-discount">${food.discountPrice}</td>
-                                    <td class="food-final-price">${food.finalPrice}</td>
-                                    <td class="table-btn">
-                                        <i class="fa-solid fa-circle-minus remove action-icon"></i>
-                                        <div class="modal-remove modalBlock"> 
-                                            <div class="modal-remove-wrapper ">
-                                                <div class="modal-form-remove">
-                                                    <form action="" class="confirm-delete">
-                                                        <input type="hidden" name="foodCode" value="${food.foodID}" >
-                                                        <span class="confirm-title" >Are you sure to delete food ${food.foodID}</span>
-                                                        <div class="btn-wrapper">
-                                                            <button class="confirm" type="submit" style="border-bottom-left-radius: 15px;" name="remove" value="true">Yes</button>
-                                                            <button class="confirm" type="submit" style="border-bottom-right-radius: 15px;" name="remove" value="false">No</button>
-                                                        </div>                                                   
-                                                    </form>
+                                        <td class="food-price">${food.originalPrice}</td>
+                                        <td class="food-discount">${food.discountPrice}</td>
+                                        <td class="food-final-price">${food.finalPrice}</td>
+                                        <td class="table-btn">
+                                            <i class="fa-solid fa-circle-minus remove action-icon"></i>
+                                            <div class="modal-remove modalBlock"> 
+                                                <div class="modal-remove-wrapper ">
+                                                    <div class="modal-form-remove">
+                                                        <form action="" class="confirm-delete">
+                                                            <input type="hidden" name="foodCode" value="${food.foodID}" >
+                                                            <span class="confirm-title" >Are you sure to delete food ${food.foodID}</span>
+                                                            <div class="btn-wrapper">
+                                                                <button class="confirm" type="submit" style="border-bottom-left-radius: 15px;" name="remove" value="true">Yes</button>
+                                                                <button class="confirm" type="submit" style="border-bottom-right-radius: 15px;" name="remove" value="false">No</button>
+                                                            </div>                                                   
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <i class="fa-solid fa-pen-to-square edit action-icon"></i>
-                                        <div class="modal-wrapper modal-edit  modalBlock"> >
-                                            <div class="modal-content-wrapper">
-                                                <div class="modal-form">
-                                                    <h4 class="dashboard-title btnCrete text-center">Update foodName</h4>
-                                                    <form action="" class="modal-input-form">
-                                                        <input type="hidden" name="foodCode" value="${food.foodID}">
-                                                        <div class="input-wrapper">
-                                                            <div class="lable">
-                                                                <label for="foodName">Food Name</label>
+                                            <i class="fa-solid fa-pen-to-square edit action-icon"></i>
+                                            <div class="modal-wrapper modal-edit  modalBlock"> >
+                                                <div class="modal-content-wrapper">
+                                                    <div class="modal-form">
+                                                        <h4 class="dashboard-title btnCrete text-center">Update foodName</h4>
+                                                        <form action="" class="modal-input-form">
+                                                            <input type="hidden" name="foodCode" value="${food.foodID}">
+                                                            <div class="input-wrapper">
+                                                                <div class="lable">
+                                                                    <label for="foodName">Food Name</label>
+                                                                </div>
+                                                                <div class="input">
+                                                                    <input type="text" name="foodName" id="foodName" value=" " >
+                                                                </div>
                                                             </div>
-                                                            <div class="input">
-                                                                <input type="text" name="foodName" id="foodName" value=" " >
-                                                            </div>
-                                                        </div>
 
-                                                        <div class="input-wrapper">
-                                                            <div class="lable">
-                                                                <label for="price">Original Price</label>
+                                                            <div class="input-wrapper">
+                                                                <div class="lable">
+                                                                    <label for="price">Original Price</label>
+                                                                </div>
+                                                                <div class="input">
+                                                                    <input type="text" name="originalPrice" id="price" >
+                                                                </div>
                                                             </div>
-                                                            <div class="input">
-                                                                <input type="text" name="originalPrice" id="price" >
+                                                            <div class="input-wrapper">
+                                                                <div class="lable">
+                                                                    <label for="discount">Discount Price</label>
+                                                                </div>
+                                                                <div class="input">
+                                                                    <input type="text" name="discountPrice" id="discount" >
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-wrapper">
-                                                            <div class="lable">
-                                                                <label for="discount">Discount Price</label>
+                                                            <div class="input-wrapper">
+                                                                <div class="lable">
+                                                                    <label for="finalPrice">Final Price</label>
+                                                                </div>
+                                                                <div class="input">
+                                                                    <input type="text" name="price" id="finalPrice" disabled>
+                                                                </div>
                                                             </div>
-                                                            <div class="input">
-                                                                <input type="text" name="discountPrice" id="discount" >
+                                                            <div class="btn-submit">
+                                                                <button class="btn-action " type="submit" name="updateFood" value="update">Update now</button>
                                                             </div>
-                                                        </div>
-                                                        <div class="input-wrapper">
-                                                            <div class="lable">
-                                                                <label for="finalPrice">Final Price</label>
-                                                            </div>
-                                                            <div class="input">
-                                                                <input type="text" name="price" id="finalPrice" disabled>
-                                                            </div>
-                                                        </div>
-                                                        <div class="btn-submit">
-                                                            <button class="btn-action " type="submit" name="updateFood" value="update">Update now</button>
-                                                        </div>
-                                                    </form>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
                                 </c:forEach>
                             </tbody>
                         </table>

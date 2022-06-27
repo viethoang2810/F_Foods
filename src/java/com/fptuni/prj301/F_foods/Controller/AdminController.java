@@ -44,7 +44,14 @@ public class AdminController extends HttpServlet {
         ArrayList<FoodDTO> foodList = new ArrayList<>();
         FoodDAO food = new FoodDAO();
         String updateAction = request.getParameter("updateFood");
+         String logout = request.getParameter("logout");
 
+        if (logout != null) {
+
+            ss.setAttribute("usersession", null);
+            response.sendRedirect("../Access/Login");
+            return;
+        }
         int foodQuantity = admin.getQuantityProduct();
         int foodDiscountQuantity = admin.getQuantityDiscountProduct();
         userList = admin.getListUser();
