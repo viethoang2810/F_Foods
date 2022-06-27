@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,13 +51,14 @@
                         <span class="total-selling-amount">${foodDetail.finalPrice}</span>
                     </div>
                     <div class="cart-order-product">
-                        <form action="" class="buying-form">
+                        <form action="${request.contextPath()}" class="buying-form">
+                            <input type="hidden" name="detail" value="${foodDetail.foodID}">
                             <input type="hidden" name="foodId" value="${foodDetail.foodID}">
                             <button type="submit" name="addCart" class="btn-buying btn-action" value="add">
                                 <i class="fa-solid fa-cart-plus"></i>
                                 <span class="addCart-content">Add to your cart</span>
                             </button>
-                            <button type="submit" name="buyNow" class="btn-buying btn-action">
+                            <button type="submit" name="buyNow" class="btn-buying btn-action" value="buy">
                                 <i class="fa-solid fa-circle-dollar-to-slot"></i>
                                 <span class="buyNow-content">Buy now</span>
                             </button>

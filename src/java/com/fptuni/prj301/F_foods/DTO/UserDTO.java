@@ -13,31 +13,57 @@ import java.util.Date;
  * @author Admin
  */
 public class UserDTO {
+    private int userID ;
     private String username ;
     private String password ;
     private String phoneNumber;
+    private String address ;
     private String accessRight ;
-    private ArrayList<FoodDTO> cart ;
+    private ArrayList<ItemDTO> cart ;
     private Date dateCreateAccount ;
 
     public UserDTO() {
     }
 
-    public UserDTO(String username, String accessRight, ArrayList<FoodDTO> cart) {
+    public UserDTO(String username, String accessRight, ArrayList<ItemDTO> cart) {
         this.username = username;
         this.accessRight = accessRight;
         this.cart = cart;
     }
 
+    public UserDTO(int userID, String username, String phoneNumber, String address, Date dateCreateAccount) {
+        this.userID = userID;
+        this.username = username;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.dateCreateAccount = dateCreateAccount;
+    }
+
    
     
-    public UserDTO(String username, String phoneNumber, String accessRight, ArrayList<FoodDTO> cart, Date dateCreateAccount) {
+    public UserDTO(String username, String phoneNumber, String accessRight, ArrayList<ItemDTO> cart, Date dateCreateAccount) {
         this.username = username;
         this.password = password;
         this.phoneNumber = phoneNumber;
         this.accessRight = accessRight;
         this.cart = cart;
         this.dateCreateAccount = dateCreateAccount;
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getUsername() {
@@ -72,11 +98,11 @@ public class UserDTO {
         this.accessRight = accessRight;
     }
 
-    public ArrayList<FoodDTO> getCart() {
+    public ArrayList<ItemDTO> getCart() {
         return cart;
     }
 
-    public void setCart(ArrayList<FoodDTO> cart) {
+    public void setCart(ArrayList<ItemDTO> cart) {
         this.cart = cart;
     }
 

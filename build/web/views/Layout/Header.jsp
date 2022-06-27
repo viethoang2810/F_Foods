@@ -48,7 +48,7 @@
                                 </div>
                             </nav>
                         </div>
-
+                        <jsp:useBean id="usersession" class="com.fptuni.prj301.F_foods.DTO.UserDTO" scope="session"/>
                         <div class="header-right col-md-3">
                             <div class="header-right-notify right-side">
                                 <i class="fa-solid fa-bell "></i>
@@ -57,21 +57,20 @@
                                 </div>
                             </div>
                             <div class="header-right-cart right-side">
-                                <i class="fa-brands fa-opencart"></i>
-                                <div class="cart-amount">
-                                    <span class="amount">0</span>
-                                </div>
+                                <a href="../Checkout/Pay">
+                                    <i class="fa-brands fa-opencart"></i>
+                                    <div class="cart-amount">
+                                        <span class="amount">${usersession.cart.size}</span>
+                                    </div></a>
                             </div>
                             <div class="header-right-account right-side">
-                                <jsp:useBean id="usersession" class="com.fptuni.prj301.F_foods.DTO.UserDTO" scope="session"/>
-
                                 <div class="account-infor">
                                     <span class="account-infor__name">${usersession.username}</span>
-                                     <div class="logout-wrapper text-center">
-                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                                    <a href="?logout=true" class="logout-link "
-                                        style="text-decoration:none ;color:#fff;">Log out</a>
-                                </div>
+                                    <div class="logout-wrapper text-center">
+                                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                        <a href="?logout=true" class="logout-link "
+                                           style="text-decoration:none ;color:#fff;">Log out</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

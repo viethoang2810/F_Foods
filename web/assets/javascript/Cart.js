@@ -25,8 +25,8 @@ listOfPrice.forEach((price, index)=>{
     var priceString = (price.innerHTML).split('.');
     priceString = parseInt(priceString[0]);
     totalPrice += priceString ;
-    document.querySelector('.total-price').innerHTML = totalPrice +'.000 VNĐ';
-    document.querySelector('.final-price').innerHTML = totalPrice*0.1 +'.000 VNĐ'
+    document.querySelector('.total-price').innerHTML = totalPrice +' VNĐ';
+    document.querySelector('.final-price').innerHTML = totalPrice*0.1 +' VNĐ'
 })
 
 document.querySelector('.amount-item').innerHTML = totalItemInCart;

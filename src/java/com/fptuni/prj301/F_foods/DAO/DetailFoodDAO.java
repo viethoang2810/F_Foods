@@ -53,10 +53,10 @@ public class DetailFoodDAO {
     }
 
     public ArrayList<FoodDTO> getFoodArrayRandom(ArrayList<FoodDTO> list) {
-        int index = (int) Math.floor(Math.random() * list.size());
+        int index = (int) Math.floor(Math.random() * (list.size() - 2));
         while (randomFoodArray.size() <= 3) {
             randomFoodArray.add(list.get(index));
-            index = (int) Math.ceil(Math.random() * list.size());
+            index = (int) Math.floor(Math.random() * list.size());
         }
         return randomFoodArray;
     }

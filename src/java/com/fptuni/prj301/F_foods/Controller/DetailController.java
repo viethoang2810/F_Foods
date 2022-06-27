@@ -9,6 +9,7 @@ import com.fptuni.prj301.F_foods.DAO.DetailFoodDAO;
 import com.fptuni.prj301.F_foods.DAO.FoodDAO;
 import com.fptuni.prj301.F_foods.DTO.CommentDTO;
 import com.fptuni.prj301.F_foods.DTO.FoodDTO;
+import com.fptuni.prj301.F_foods.DTO.ItemDTO;
 import com.fptuni.prj301.F_foods.DTO.UserDTO;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -39,6 +41,7 @@ public class DetailController extends HttpServlet {
         DetailFoodDAO detail = new DetailFoodDAO();
         FoodDAO foodDao = new FoodDAO();
         UserDTO dto = new UserDTO();
+        ArrayList<ItemDTO> cart = new ArrayList<>();
         ArrayList<CommentDTO> listOfComment = new ArrayList<>();
         ArrayList<FoodDTO> list = foodDao.getListFood();
         FoodDTO food = detail.getFoodById(Integer.parseInt(detailFoodId));
@@ -55,18 +58,27 @@ public class DetailController extends HttpServlet {
         }
         if (request.getParameter("addCart") != null) {
             String foodId = request.getParameter("foodId");
+            HttpSession ss = request.getSession();
+            UserDTO user = (UserDTO) ss.getAttribute("usersession");
+
             FoodDTO item = detail.getFoodById(Integer.parseInt(foodId));
-            ArrayList<FoodDTO> cart = dto.getCart();
+            cart = user.getCart();
+            if (cart == null) {
+                cart = new ArrayList<>();
+            }
+            cart.add(new ItemDTO(cart.size(), item.getFoodID(), 1, item, item.getFinalPrice()));
             response.sendRedirect("../Detail/detailFood?detail=" + foodId);
             return;
-            
+        }
+        if (request.getParameter("buyNow") != null) {
+            response.sendRedirect("../Checkout/pay?food=" + detailFoodId);
+            return;
         }
         listOfComment = detail.getListComment(detailFoodId);
         request.setAttribute("listComment", listOfComment);
         request.setAttribute("randomFood", randomArray);
         request.setAttribute("foodDetail", food);
         request.getRequestDispatcher("/views/DetailProduct.jsp").forward(request, response);
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

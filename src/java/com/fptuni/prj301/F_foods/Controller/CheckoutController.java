@@ -5,12 +5,18 @@
  */
 package com.fptuni.prj301.F_foods.Controller;
 
+import com.fptuni.prj301.F_foods.DAO.DetailFoodDAO;
+import com.fptuni.prj301.F_foods.DTO.FoodDTO;
+import com.fptuni.prj301.F_foods.DTO.ItemDTO;
+import com.fptuni.prj301.F_foods.DTO.UserDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -30,18 +36,20 @@ public class CheckoutController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet CheckoutController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet CheckoutController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        DetailFoodDAO detail = new DetailFoodDAO();
+        HttpSession ss = request.getSession();
+        UserDTO dto = (UserDTO)ss.getAttribute("usersession");
+        String foodId = request.getParameter("food");
+        ArrayList<ItemDTO> cart = dto.getCart();
+        if (cart == null) {
+                cart = new ArrayList<>();
+            }
+        if (foodId != null) {
+            FoodDTO item = detail.getFoodById(Integer.parseInt(foodId));
+            cart.add(new ItemDTO(cart.size(), item.getFoodID(), 1, item, item.getFinalPrice()));
         }
+        request.setAttribute("listItem", cart);
+        request.getRequestDispatcher("/views/Cart.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

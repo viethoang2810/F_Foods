@@ -10,43 +10,33 @@ package com.fptuni.prj301.F_foods.DTO;
  * @author Admin
  */
 public class Cart {
-    private int orderID ; 
-    private int foodID ;
-    private int amount ; 
+    private int CustomerID ;
+    private String customerName ;
     private int totalPrice ;
+
+    public Cart(int CustomerID, String customerName, int totalPrice) {
+        this.CustomerID = CustomerID;
+        this.customerName = customerName;
+        this.totalPrice = totalPrice;
+    }
 
     public Cart() {
     }
 
-    public Cart(int orderID, int foodID, int amount, int totalPrice) {
-        this.orderID = orderID;
-        this.foodID = foodID;
-        this.amount = amount;
-        this.totalPrice = totalPrice;
+    public int getCustomerID() {
+        return CustomerID;
     }
 
-    public int getOrderID() {
-        return orderID;
+    public void setCustomerID(int CustomerID) {
+        this.CustomerID = CustomerID;
     }
 
-    public void setOrderID(int orderID) {
-        this.orderID = orderID;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public int getFoodID() {
-        return foodID;
-    }
-
-    public void setFoodID(int foodID) {
-        this.foodID = foodID;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
     public int getTotalPrice() {
@@ -56,6 +46,7 @@ public class Cart {
     public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
     }
+    
     
     
 }
