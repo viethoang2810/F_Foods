@@ -5,8 +5,13 @@
  */
 package com.fptuni.prj301.F_foods.Controller;
 
+import com.fptuni.prj301.F_foods.DAO.AdminDAO;
+import com.fptuni.prj301.F_foods.DAO.DetailFoodDAO;
+import com.fptuni.prj301.F_foods.DAO.FoodDAO;
+import com.fptuni.prj301.F_foods.DTO.FoodDTO;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
+import static java.util.Collections.list;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,15 +37,29 @@ public class HomeController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String logout = request.getParameter("logout");
-
+        FoodDAO food = new FoodDAO();
+        AdminDAO admin = new AdminDAO();
+        DetailFoodDAO detail = new DetailFoodDAO();
+        ArrayList<FoodDTO> listFood = food.getListFood();
+        String viewDetail = request.getParameter("viewDetail");
+        if(viewDetail != null){
+            String id = request.getParameter("detail");
+            response.sendRedirect("../Detail/detailFood?detail="+id);
+            return;
+        }
         if (logout != null) {
             HttpSession ss = request.getSession();
             ss.setAttribute("usersession", null);
             response.sendRedirect("../Access/Login");
             return;
         }
-        request.getRequestDispatcher("/views/HomePage.jsp").forward(request, response);
         
+        ArrayList<FoodDTO> listFoodRandom = detail.getFoodArrayRandom(listFood);
+        request.setAttribute("randomFood", listFoodRandom);
+        request.setAttribute("quantityCustomer", admin.getQuantityCustomer());
+        request.setAttribute("quantityFood", food.getQuantityFood());
+        request.getRequestDispatcher("/views/HomePage.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

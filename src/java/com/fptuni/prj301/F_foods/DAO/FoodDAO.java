@@ -73,8 +73,7 @@ public class FoodDAO {
                 f.setCategory(rs.getString("Category"));
                 f.setOriginalPrice(rs.getInt("OriginalPrice"));
                 f.setDiscountPrice(rs.getInt("DiscountPrice"));
-                                f.setFinalPrice(rs.getInt("FinalPrice"));
-
+                f.setFinalPrice(rs.getInt("FinalPrice"));
 
                 list.add(f);
 
@@ -89,7 +88,7 @@ public class FoodDAO {
         PreparedStatement psm = null;
         ResultSet rs = null;
         String query = "SELECT FoodID,FoodName,ImageLink1,ImageLink2,ImageLink3,Description,Category,OriginalPrice,DiscountPrice,FinalPrice\n"
-                + " FROM Food WHERE FoodName LIKE '%"+searchKey+"%'";
+                + " FROM Food WHERE FoodName LIKE '%" + searchKey + "%'";
         try {
             con = DBUtils.getConnection();
             psm = con.prepareStatement(query);
@@ -105,8 +104,7 @@ public class FoodDAO {
                 f.setCategory(rs.getString("Category"));
                 f.setOriginalPrice(rs.getInt("OriginalPrice"));
                 f.setDiscountPrice(rs.getInt("DiscountPrice"));
-                                f.setFinalPrice(rs.getInt("FinalPrice"));
-
+                f.setFinalPrice(rs.getInt("FinalPrice"));
 
                 list.add(f);
 
@@ -117,15 +115,15 @@ public class FoodDAO {
     }
 
     public ArrayList<FoodDTO> getListIsSorted(String sort) {
-         Connection con = null;
+        Connection con = null;
         PreparedStatement psm = null;
         ResultSet rs = null;
         String query = "SELECT FoodID,FoodName,ImageLink1,ImageLink2,ImageLink3,Description,Category,OriginalPrice,DiscountPrice,FinalPrice\n"
-                + " FROM Food ORDER BY FinalPrice "+sort+" ;";
+                + " FROM Food ORDER BY FinalPrice " + sort + " ;";
         try {
             con = DBUtils.getConnection();
             psm = con.prepareStatement(query);
-        
+
             rs = psm.executeQuery();
             while (rs.next()) {
                 FoodDTO f = new FoodDTO();
@@ -138,8 +136,7 @@ public class FoodDAO {
                 f.setCategory(rs.getString("Category"));
                 f.setOriginalPrice(rs.getInt("OriginalPrice"));
                 f.setDiscountPrice(rs.getInt("DiscountPrice"));
-                                f.setFinalPrice(rs.getInt("FinalPrice"));
-
+                f.setFinalPrice(rs.getInt("FinalPrice"));
 
                 list.add(f);
 
@@ -147,5 +144,23 @@ public class FoodDAO {
         } catch (Exception e) {
         }
         return list;
+    }
+
+    public int getQuantityFood() {
+        Connection con = null;
+        PreparedStatement stm = null;
+        ResultSet rs = null ;
+        int quantity = 0;
+        String sql = "SELECT COUNT(FoodID) AS Quantity FROM Food ";
+        try {
+            con = DBUtils.getConnection();
+            stm = con.prepareStatement(sql);
+            rs = stm.executeQuery();
+            if(rs.next()){
+                quantity = rs.getInt("Quantity");
+            }
+        } catch (Exception e) {
+        }
+        return quantity ;
     }
 }

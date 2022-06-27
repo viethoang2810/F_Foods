@@ -157,4 +157,23 @@ public class AdminDAO {
         }
         return false;
     }
+    
+    public int getQuantityCustomer(){
+       Connection con = null ;
+       PreparedStatement stm = null ;
+       ResultSet rs = null ;
+       String sql = " SELECT COUNT(CustomerID) AS Quantity FROM Customer" ;
+       int quantity = 0;
+        try {
+            con = DBUtils.getConnection();
+            stm = con.prepareStatement(sql);
+            rs = stm.executeQuery();
+            if(rs.next()){
+                quantity = rs.getInt("Quantity");
+            }    
+        } catch (Exception e) {
+           e.printStackTrace();
+        }
+        return quantity;
+    }
 }

@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="../assets/css/HomePage.css">
         <link rel="stylesheet" href="../assets/css/responsive.css">
         <link rel="stylesheet" href="../assets/css/Main.css">
+        <link rel="stylesheet" href="../assets/css/Detail.css">
         <link rel="stylesheet" href="../assets/css/ListOfProduct.css">
 
         <!-- Bootstrap link embed in here -->
@@ -90,7 +91,7 @@
                                 <div class="slide-wrapper">
                                     <div class="slider-main">
                                         <div class="slider-item">
-                                            <img src="../assets/image/Fast-Food-Wallpaper-.jpg" alt=""
+                                            <img src="https://i.pinimg.com/736x/15/12/05/151205aff511e1a637b15bfd38cf29d0.jpg" alt=""
                                                  class="slider-img img-responsive">
                                         </div>
                                         <div class="slider-item">
@@ -117,7 +118,7 @@
                                 <div class="slide-wrapper">
                                     <div class="slider-main">
                                         <div class="slider-item">
-                                            <img src="../assets/image/Fast-Food-Wallpaper-.jpg" alt=""
+                                            <img src="https://underscore.factor75.com/wp-content/uploads/2020/03/2-1.png" alt=""
                                                  class="slider-img img-responsive">
                                         </div>
                                         <div class="slider-item">
@@ -160,46 +161,19 @@
                 <h3 class="about-us-tittle">Recommended Product</h3>
             </div>
             <div class="row body-product">
-                <div class="product-item-detail col-md-2">
-                    <img src="../assets/image/VNO_fastfood1.jpg" alt="" class="product-item-image">
-                    <div class="product-item-description">
-                        <span class="product-name">Traditional milk tea</span>
-                        <form action="" class="view-detail">
-                            <input type="hidden" name="detail" value="" />
-                            <button type="submit" value="View" class="btn-view">View detail</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="product-item-detail col-md-2">
-                    <img src="../assets/image/VNO_fastfood1.jpg" alt="" class="product-item-image">
-                    <div class="product-item-description">
-                        <span class="product-name">Traditional milk tea</span>
-                        <form action="" class="view-detail">
-                            <input type="hidden" name="detail" value="" />
-                            <button type="submit" value="View" class="btn-view">View detail</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="product-item-detail col-md-2">
-                    <img src="../assets/image/VNO_fastfood1.jpg" alt="" class="product-item-image">
-                    <div class="product-item-description">
-                        <span class="product-name">Traditional milk tea</span>
-                        <form action="" class="view-detail">
-                            <input type="hidden" name="detail" value="" />
-                            <button type="submit" value="View" class="btn-view">View detail</button>
-                        </form>
-                    </div>
-                </div><!-- comment -->
-                <div class="product-item-detail col-md-2">
-                    <img src="../assets/image/VNO_fastfood1.jpg" alt="" class="product-item-image">
-                    <div class="product-item-description">
-                        <span class="product-name">Traditional milk tea</span>
-                        <form action="" class="view-detail">
-                            <input type="hidden" name="detail" value="" />
-                            <button type="submit" value="View" class="btn-view">View detail</button>
-                        </form>
-                    </div>
-                </div>
+                <c:forEach var="random" items="${randomFood}" varStatus="loop">
+                    <div class="associate-item col-lg-2 col-md-4 col-sm-6 col-xs-12" style="padding: 0; ">
+                            <img src="${random.imgLink1}" alt="" class="associate-product-img">
+                            <div class="associate-product-detail">
+                                <span class="associate-product-name">${random.foodName}</span>
+                                <form action="${request.contextPath()}" class="view-detail">
+                                    <input type="hidden" name="detail" value="${random.foodID}" />
+                                    <button type="submit" value="View" class="btn-view" name="viewDetail">View</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </c:forEach>
             </div>
             <div class="view-more-product">
                 <span class="view-more-content">
@@ -218,7 +192,15 @@
                 <div class="statistic-detail">
                     <div class="statistic-total-order">
                         <div class="statistic-name">
-                            <span class="name-detail">TOTAL ORDER </span>
+                            <span class="name-detail">Total Customer </span>
+                        </div>
+                        <div class="statistic-amount">
+                            <span class="amount-detail">${quantityCustomer}+</span>
+                        </div>
+                    </div>
+                    <div class="statistic-total-order">
+                        <div class="statistic-name">
+                            <span class="name-detail">Total Order </span>
                         </div>
                         <div class="statistic-amount">
                             <span class="amount-detail">134567 </span>
@@ -226,18 +208,10 @@
                     </div>
                     <div class="statistic-total-order">
                         <div class="statistic-name">
-                            <span class="name-detail">TOTAL ORDER </span>
+                            <span class="name-detail">Total Foods </span>
                         </div>
                         <div class="statistic-amount">
-                            <span class="amount-detail">134567 </span>
-                        </div>
-                    </div>
-                    <div class="statistic-total-order">
-                        <div class="statistic-name">
-                            <span class="name-detail">TOTAL ORDER </span>
-                        </div>
-                        <div class="statistic-amount">
-                            <span class="amount-detail">134567 </span>
+                            <span class="amount-detail" >${quantityFood}+</span>
                         </div>
                     </div>
                 </div>
