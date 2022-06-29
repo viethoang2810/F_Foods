@@ -35,6 +35,29 @@ public class AccessController extends HttpServlet {
         String login = request.getParameter("Login");
         String signUp = request.getParameter("signup");
         AccessDAO access = new AccessDAO();
+        String btnAction = request.getParameter("Signup");
+        if (btnAction != null) {
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            String re_pass = request.getParameter("confirm");
+            String phone = request.getParameter("phonenumber");
+            String address = request.getParameter("address");
+            String Signup = request.getParameter("Signup");
+            if (!password.equals(re_pass)) {
+                request.setAttribute("error", "Invalid password!");
+            } else {
+                AccessDAO dao = new AccessDAO();
+                UserDTO a = dao.checkUserExist(username);
+                if (a == null) {
+                    //dc signup
+                    boolean checkInsert = dao.signup(username, password, address, phone);
+                    if (checkInsert) {
+                        response.sendRedirect("../Home/HomePage");
+                        return;
+                    }
+                }
+            }
+        }
         if (login != null) {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
