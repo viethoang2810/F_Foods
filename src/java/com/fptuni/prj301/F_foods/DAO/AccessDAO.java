@@ -23,7 +23,7 @@ public class AccessDAO {
         ResultSet rs = null;
         UserDTO user = new UserDTO();
 
-        String sql = "SELECT Username , Password , AccessRole,PhoneNumber FROM dbo.Customer WHERE Username LIKE ?  AND Password LIKE ?";
+        String sql = "SELECT CustomerID , Username , Password , AccessRole,PhoneNumber FROM dbo.Customer WHERE Username LIKE ?  AND Password LIKE ?";
         try {
             con = DBUtils.getConnection();
             stm = con.prepareStatement(sql);
@@ -31,6 +31,7 @@ public class AccessDAO {
             stm.setString(2, password);
             rs = stm.executeQuery();
             if (rs.next()) {
+                user.setUserID(rs.getInt("CustomerID"));
                 user.setUsername(rs.getString("Username"));
                 user.setAccessRight(rs.getString("AccessRole"));
                 user.setPhoneNumber(rs.getString("PhoneNumber"));

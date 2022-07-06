@@ -52,15 +52,17 @@
                         <div class="header-right col-md-3">
                             <div class="header-right-notify right-side">
                                 <i class="fa-solid fa-bell "></i>
-                                <div class="notify-amount">
-                                    <span class="amount">0</span>
+                                <div class="notify-amount">  
+                                    <div class="notify-content-wrapper">
+                                        <span class="notify-content text-center" style="color:#333; font-size:1.6rem;">The food added to your cart successfully</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="header-right-cart right-side">
                                 <a href="../Checkout/Pay">
                                     <i class="fa-brands fa-opencart"></i>
                                     <div class="cart-amount">
-                                        <span class="amount">${usersession.cart.size}</span>
+
                                     </div></a>
                             </div>
                             <div class="header-right-account right-side">

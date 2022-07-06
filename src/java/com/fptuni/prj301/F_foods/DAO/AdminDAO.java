@@ -5,6 +5,8 @@
  */
 package com.fptuni.prj301.F_foods.DAO;
 
+import com.fptuni.prj301.F_foods.DTO.ItemDetailOrderDTO;
+import com.fptuni.prj301.F_foods.DTO.OrderDTO;
 import com.fptuni.prj301.F_foods.DTO.UserDTO;
 import com.fptuni.prj301.F_foods.Utils.DBUtils;
 import java.sql.Connection;
@@ -19,6 +21,8 @@ import java.util.ArrayList;
 public class AdminDAO {
 
     public ArrayList<UserDTO> userList = new ArrayList<>();
+    public ArrayList<OrderDTO> listOrder = new ArrayList<>();
+    public ArrayList<ItemDetailOrderDTO> listDetail = new ArrayList<>();
 
     public int getQuantityProduct() {
         int quantity = 0;
@@ -157,23 +161,96 @@ public class AdminDAO {
         }
         return false;
     }
-    
-    public int getQuantityCustomer(){
-       Connection con = null ;
-       PreparedStatement stm = null ;
-       ResultSet rs = null ;
-       String sql = " SELECT COUNT(CustomerID) AS Quantity FROM Customer" ;
-       int quantity = 0;
+
+    public int getQuantityCustomer() {
+        Connection con = null;
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        String sql = " SELECT COUNT(CustomerID) AS Quantity FROM Customer";
+        int quantity = 0;
         try {
             con = DBUtils.getConnection();
             stm = con.prepareStatement(sql);
             rs = stm.executeQuery();
-            if(rs.next()){
+            if (rs.next()) {
                 quantity = rs.getInt("Quantity");
-            }    
+            }
         } catch (Exception e) {
-           e.printStackTrace();
+            e.printStackTrace();
         }
         return quantity;
+    }
+
+    public ArrayList<OrderDTO> getListOrder() {
+        Connection con = null;
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        String sql = "SELECT OrderID,CusID,FullName,Address,PhoneNumber,TotalPrice,DateOrder FROM[Order]";
+        try {
+            con = DBUtils.getConnection();
+            stm = con.prepareStatement(sql);
+            rs = stm.executeQuery();
+            while (rs.next()) {
+                OrderDTO order = new OrderDTO();
+                order.setOrderId(rs.getInt("OrderID"));
+                order.setCustomerID(rs.getInt("CusID"));
+                order.setCustomerName(rs.getString("FullName"));
+                order.setAddress(rs.getString("Address"));
+                order.setPhoneNumber(rs.getString("PhoneNumber"));
+                order.setTotalPrice(rs.getInt("TotalPrice"));
+                order.setDateOrder(rs.getDate("DateOrder"));
+
+                listOrder.add(order);
+            }
+        } catch (Exception e) {
+        }
+        return listOrder;
+    }
+
+    public int getQuantityOrder() {
+        Connection con = null;
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        int quantity = 0;
+        String sql = " SELECT COUNT(OrderID) AS Quantity FROM [Order]";
+        try {
+            con = DBUtils.getConnection();
+            stm = con.prepareStatement(sql);
+            rs = stm.executeQuery();
+            if (rs.next()) {
+                quantity = rs.getInt("Quantity");
+            }
+        } catch (Exception e) {
+
+        }
+        return quantity;
+    }
+
+    public ArrayList<ItemDetailOrderDTO> getItemDetail(int id) {
+        String sql = " SELECT CusID , FullName ,FoodID,AmountOfItem,[OrderDetail].TotalPrice,DateOrder\n"
+                + "FROM [Order] ,[OrderDetail]\n"
+                + "WHERE [OrderDetail].OrderID = ? AND [OrderDetail].OrderID = [Order].OrderID";
+        Connection con = null;
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        try {
+            con = DBUtils.getConnection();
+            stm = con.prepareStatement(sql);
+            stm.setInt(1, id);
+            rs = stm.executeQuery();
+            while (rs.next()) {
+                ItemDetailOrderDTO dto = new ItemDetailOrderDTO();
+                dto.setCusID(rs.getInt("CusID"));
+                dto.setFullName(rs.getString("FullName"));
+                dto.setFoodID(rs.getInt("FoodID"));
+                dto.setAmountOfItem(rs.getInt("AmountOfItem"));
+                dto.setTotalPrice(rs.getInt("TotalPrice"));
+                dto.setDateOrder(rs.getDate("DateOrder"));
+
+                listDetail.add(dto);
+            }
+        } catch (Exception e) {
+        }
+        return listDetail;
     }
 }

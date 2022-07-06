@@ -346,6 +346,7 @@
                                     <h5 class="widget-title">Contact Us<span></span></h5>
                                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                                     <div class="emailfield">
+                                        <form>
                                         <input type="text" name="email" value="Email">
                                         <input name="uri" type="hidden" value="arabiantheme">
                                         <input name="loc" type="hidden" value="en_US">

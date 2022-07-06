@@ -80,7 +80,7 @@
                                  style="border-left: 7px solid rgb(234, 159, 10);">
                                 <div class="item-infor">
                                     <span class="item-infor-title item-title">Total Order</span>
-                                    <span class="item-infor-money item-title">100</span>
+                                    <span class="item-infor-money item-title">${orderQuantity}</span>
                                 </div>
                                 <div class="item-icon">
                                     <i class="fa-solid fa-bag-shopping"></i>
@@ -134,7 +134,7 @@
                         <h4 class="dashboard-title" >Order Management</h4>
                         <table class="table infor-detail text-center">
                             <thead>
-                            <th class="table-head">CusID</th>
+                            <th class="table-head">OrderID</th>
                             <th class="table-head">Full name</th>
                             <th class="table-head">Address </th>
                             <th class="table-head sorting-element">
@@ -144,24 +144,28 @@
                                 <a href="?sort_by_price=DESC" class="table-head-link">
                                     <i class="fa-solid fa-sort-down"></i>
                                 </a>
-                            </th>
+                            </th >
+                            <th class="table-head">Phone number</th>
                             <th class="table-head">Date order</th>
                             <th class="table-head"></th>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Việt Hoàng</td>
-                                    <td>Kp2,Tân Thành,Bắc Tân Uyên,Bình Dương</td>
-                                    <td>0335349368</td>
-                                    <td>2022-05-12</td>
-                                    <td>
-                                        <button type="button">
-                                            <a href="?detailOrder=detail" class="view-detail-link">View detail</a>
-                                        </button>
-                                    </td>
+                                <c:forEach var="order" items="${listOrder}">
+                                    <tr>
+                                        <td>${order.orderId}</td>
+                                        <td>${order.customerName}</td>
+                                        <td>${order.address}</td>
+                                        <td>${order.totalPrice}</td>
+                                        <td>${order.phoneNumber}</td>
+                                        <td>${order.dateOrder}</td>
+                                        <td>
+                                            <button type="button">
+                                                <a href="?detailOrder=${order.orderId}" class="view-detail-link">View detail</a>
+                                            </button>
+                                        </td>
 
-                                </tr>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>
@@ -175,29 +179,31 @@
                             <th>Date create account</th>
                             </thead>
                             <tbody>
-                                <tr class="order-table-row">
-                                    <td>1</td>
-                                    <td>Việt Hoàng</td>
-                                    <td>
-                                        <table class="table text-center">
-                                            <thead>
-                                            <th>Item</th>
-                                            <th>Amount</th>
-                                            <th>Price</th>
-                                            </thead>
-                                            <tbody class="sub-table-row">
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>x2</td>
-                                                    <td>50.000</td>
+                                <c:forEach var="detail" items="${listDetail}">
+                                    <tr class="order-table-row">
+                                        <td>${detail.cusID}</td>
+                                        <td>${detail.fullName}</td>
+                                        <td>
+                                            <table class="table text-center">
+                                                <thead>
+                                                <th>Item</th>
+                                                <th>Amount</th>
+                                                <th>Price</th>
+                                                </thead>
+                                                <tbody class="sub-table-row">
+                                                    <tr>
+                                                        <td>${detail.foodID}</td>
+                                                        <td>x${detail.amountOfItem}</td>
+                                                        <td>${detail.totalPrice}</td>
 
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                    <td>0335349368</td>
-                                    <td>2022-05-12</td>
-                                </tr>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                        <td>${detail.dateOrder}</td>
+                                    </tr> 
+                                </c:forEach>
+
                             </tbody>
                         </table>
                     </div>

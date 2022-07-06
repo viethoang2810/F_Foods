@@ -8,6 +8,8 @@ package com.fptuni.prj301.F_foods.Controller;
 import com.fptuni.prj301.F_foods.DAO.AdminDAO;
 import com.fptuni.prj301.F_foods.DAO.FoodDAO;
 import com.fptuni.prj301.F_foods.DTO.FoodDTO;
+import com.fptuni.prj301.F_foods.DTO.ItemDetailOrderDTO;
+import com.fptuni.prj301.F_foods.DTO.OrderDTO;
 import com.fptuni.prj301.F_foods.DTO.UserDTO;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -35,6 +37,8 @@ public class AdminController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+
         HttpSession ss = request.getSession();
         UserDTO us = (UserDTO) ss.getAttribute("usersession");
         String createFood = request.getParameter("createNew");
@@ -42,11 +46,14 @@ public class AdminController extends HttpServlet {
         AdminDAO admin = new AdminDAO();
         ArrayList<UserDTO> userList = new ArrayList<>();
         ArrayList<FoodDTO> foodList = new ArrayList<>();
+        ArrayList<OrderDTO> listOrder = new ArrayList<>();
+        ArrayList<ItemDetailOrderDTO> listDetail = new ArrayList<>();
         FoodDAO food = new FoodDAO();
         String updateAction = request.getParameter("updateFood");
-         String logout = request.getParameter("logout");
-
-        if (logout != null) {
+        String logout = request.getParameter("logout");
+        String detailId = request.getParameter("detailOrder");
+        if (logout
+                != null) {
 
             ss.setAttribute("usersession", null);
             response.sendRedirect("../Access/Login");
@@ -55,8 +62,8 @@ public class AdminController extends HttpServlet {
         int foodQuantity = admin.getQuantityProduct();
         int foodDiscountQuantity = admin.getQuantityDiscountProduct();
         userList = admin.getListUser();
-
-        if (createFood != null) {
+        if (createFood
+                != null) {
             String name = request.getParameter("foodName");
             String imgLink1 = request.getParameter("img1");
             String imgLink2 = request.getParameter("img2");
@@ -76,7 +83,8 @@ public class AdminController extends HttpServlet {
             response.sendRedirect("../Management/AdminPage");
             return;
         }
-        if (updateAction != null) {
+        if (updateAction
+                != null) {
             String foodID = request.getParameter("foodCode");
             String foodName = request.getParameter("foodName");
             String originalPrice = request.getParameter("originalPrice");
@@ -85,13 +93,31 @@ public class AdminController extends HttpServlet {
             response.sendRedirect("../Management/AdminPage");
             return;
         }
+        if (detailId != null) {
+            listDetail = admin.getItemDetail(Integer.parseInt(detailId));
+        }
+        int orderQuantity = admin.getQuantityOrder();
+
         foodList = food.getListFood();
-        request.setAttribute("foodList", foodList);
-        request.setAttribute("listUser", userList);
-        request.setAttribute("discountFood", foodDiscountQuantity);
-        request.setAttribute("quantity", foodQuantity);
-        request.setAttribute("user", us);
-        request.getRequestDispatcher("/views/Admin.jsp").forward(request, response);
+        listOrder = admin.getListOrder();
+        
+        
+        
+        request.setAttribute("listDetail", listDetail);
+        request.setAttribute("listOrder", listOrder);
+        request.setAttribute(
+                "foodList", foodList);
+        request.setAttribute(
+                "listUser", userList);
+        request.setAttribute("orderQuantity", orderQuantity);
+        request.setAttribute(
+                "discountFood", foodDiscountQuantity);
+        request.setAttribute(
+                "quantity", foodQuantity);
+        request.setAttribute(
+                "user", us);
+        request.getRequestDispatcher(
+                "/views/Admin.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

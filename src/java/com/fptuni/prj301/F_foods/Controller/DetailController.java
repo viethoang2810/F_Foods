@@ -67,6 +67,7 @@ public class DetailController extends HttpServlet {
                 cart = new ArrayList<>();
             }
             cart.add(new ItemDTO(cart.size(), item.getFoodID(), 1, item, item.getFinalPrice()));
+            user.setCart(cart);
             response.sendRedirect("../Detail/detailFood?detail=" + foodId);
             return;
         }

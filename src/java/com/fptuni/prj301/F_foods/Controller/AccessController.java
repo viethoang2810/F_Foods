@@ -34,6 +34,8 @@ public class AccessController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String login = request.getParameter("Login");
         String signUp = request.getParameter("signup");
+              
+
         AccessDAO access = new AccessDAO();
         if (login != null) {
             String username = request.getParameter("username");
@@ -53,6 +55,7 @@ public class AccessController extends HttpServlet {
         } else {
             request.getRequestDispatcher("/views/Login.jsp").forward(request, response);
         }
+         
         
 
     }
