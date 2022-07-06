@@ -85,7 +85,7 @@
                         </div>
                         <div class="form-wrapper disable-form" style="margin-top: -3px;">
                             <div class="form-process">
-                                <form action="" method="post" class="form-login">
+                                <form action="${request.contextPath()}"  class="form-login">
                                     <div class="input-block">
                                         <div class="lable">
                                             <lable class="input-lable" for="username">Username</lable>
@@ -107,7 +107,18 @@
                                     </div>
                                     <div class="input-block">
                                         <div class="lable">
-                                            <lable class="input-lable" for="phonenumber">Your phone numer</lable>
+                                            <lable class="input-lable" for="repassword">Repeat Password</lable>
+                                        </div>
+                                        <div class="input-text">
+                                            <input type="password" class="input-item input-password"
+                                                   placeholder="Enter repeat password....." name="confirm">
+                                            <i class="fa-solid fa-eye pass-visible"></i>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="input-block">
+                                        <div class="lable">
+                                            <lable class="input-lable" for="phonenumber">Your phone number</lable>
                                         </div>
                                         <div class="input-text">
                                             <input type="text" class="input-item "
@@ -116,17 +127,17 @@
                                     </div>
                                     <div class="input-block">
                                         <div class="lable">
-                                            <lable class="input-lable" for="Address">Address</lable>
+                                            <lable class="input-lable" for="address">Address</lable>
                                         </div>
                                         <div class="input-text">
                                             <input type="t" class="input-item "
-                                                   placeholder="Confirm password" name="Address">
+                                                   placeholder="Enter address........." name="address">
 
                                         </div>
                                     </div>
                                     <div class="input-submit-btn">
                                         <div class="btn-action">
-                                            <input type="submit" name="signup" value="Sign-Up" class="submit-btn">
+                                           <input type="submit" name="Signup" value="Sign_Up" class="submit-btn">
                                         </div>
                                     </div>
                                 </form>
