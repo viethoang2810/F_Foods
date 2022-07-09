@@ -3,12 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/PRJ301-Block10w/F_Foods(GitHub)/F_Foods/src/java/com/fptuni/prj301/F_foods/DAO/CheckoutDAO.java</file>
+            <file>file:/D:/PRJ301-Block10w/F_Foods(GitHub)/F_Foods/src/java/com/fptuni/prj301/F_foods/DAO/AdminDAO.java</file>
+            <file>file:/D:/PRJ301-Block10w/F_Foods(GitHub)/F_Foods/src/java/com/fptuni/prj301/F_foods/Controller/AdminController.java</file>
             <file>file:/D:/PRJ301-Block10w/F_Foods(GitHub)/F_Foods/web/views/Cart.jsp</file>
+            <file>file:/D:/PRJ301-Block10w/F_Foods(GitHub)/F_Foods/web/views/Admin.jsp</file>
             <file>file:/D:/PRJ301-Block10w/F_Foods(GitHub)/F_Foods/src/java/com/fptuni/prj301/F_foods/Controller/CheckoutController.java</file>
-            <file>file:/D:/PRJ301-Block10w/F_Foods(GitHub)/F_Foods/web/WEB-INF/web.xml</file>
-            <file>file:/D:/PRJ301-Block10w/F_Foods(GitHub)/F_Foods/web/assets/javascript/Cart.js</file>
-            <file>file:/D:/PRJ301-Block10w/F_Foods(GitHub)/F_Foods/src/java/com/fptuni/prj301/F_foods/DTO/ItemDTO.java</file>
+            <file>file:/D:/PRJ301-Block10w/F_Foods(GitHub)/F_Foods/src/java/com/fptuni/prj301/F_foods/DTO/ItemDetailOrderDTO.java</file>
         </group>
     </open-files>
 </project-private>

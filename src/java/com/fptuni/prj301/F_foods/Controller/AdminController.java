@@ -100,9 +100,9 @@ public class AdminController extends HttpServlet {
 
         foodList = food.getListFood();
         listOrder = admin.getListOrder();
+        int totalIncome = admin.getTotalIncome();
         
-        
-        
+        request.setAttribute("income", totalIncome);
         request.setAttribute("listDetail", listDetail);
         request.setAttribute("listOrder", listOrder);
         request.setAttribute(

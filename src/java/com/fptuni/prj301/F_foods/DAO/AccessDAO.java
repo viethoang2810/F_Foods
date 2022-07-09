@@ -39,11 +39,13 @@ public class AccessDAO {
                 user.setPassword(rs.getString("Password"));
                 user.setAccessRight(rs.getString("AccessRole"));
                 user.setPhoneNumber(rs.getString("PhoneNumber"));
+                
+                return user;
 
             }
         } catch (Exception e) {
         }
-        return user;
+        return null ;
     }
 
     public boolean signup(String username, String password, String address, String PhoneNumber) {
@@ -77,9 +79,11 @@ public class AccessDAO {
             stm.setString(1, username);
             rs = stm.executeQuery();
             if (rs.next()) {
+                user = new UserDTO();
                 user.setUsername(rs.getString("Username"));
                 user.setPassword(rs.getString("Password"));
-
+                
+                return user;
             }
         } catch (Exception e) {
         }

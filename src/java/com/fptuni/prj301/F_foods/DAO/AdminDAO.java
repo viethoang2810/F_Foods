@@ -253,4 +253,21 @@ public class AdminDAO {
         }
         return listDetail;
     }
+    public int getTotalIncome(){
+        String sql = "SELECT SUM(TotalPrice) AS TotalIncome FROM [Order]";
+        Connection con  = null ;
+        PreparedStatement stm = null ;
+        ResultSet rs = null ;
+        int income = 0 ;
+        try {
+            con = DBUtils.getConnection();
+            stm = con.prepareStatement(sql);
+            rs = stm.executeQuery();
+            if(rs.next()){
+                income = rs.getInt("TotalIncome");
+            }
+        } catch (Exception e) {
+        }
+        return income ;
+    }
 }

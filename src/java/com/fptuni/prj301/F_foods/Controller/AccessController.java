@@ -34,7 +34,6 @@ public class AccessController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String login = request.getParameter("Login");
         String signUp = request.getParameter("signup");
-              
 
         AccessDAO access = new AccessDAO();
         String btnAction = request.getParameter("Signup");
@@ -46,7 +45,8 @@ public class AccessController extends HttpServlet {
             String address = request.getParameter("address");
             String Signup = request.getParameter("Signup");
             if (!password.equals(re_pass)) {
-                request.setAttribute("error", "Invalid password!");
+                request.setAttribute("errorRe-Password", "Password and Re-password fields must be matched!");
+                request.getRequestDispatcher("/views/Login.jsp").forward(request, response);
             } else {
                 AccessDAO dao = new AccessDAO();
                 UserDTO a = dao.checkUserExist(username);
@@ -57,6 +57,9 @@ public class AccessController extends HttpServlet {
                         response.sendRedirect("../Home/HomePage");
                         return;
                     }
+                } else {
+                    request.setAttribute("errorSignUp", "Username has already existed");
+                    request.getRequestDispatcher("/views/Login.jsp").forward(request, response);
                 }
             }
         }
@@ -74,12 +77,14 @@ public class AccessController extends HttpServlet {
                         response.sendRedirect("../Management/AdminPage");
                     }
                 }
+            } else {
+                request.setAttribute("errorLogin", "Username or password is incorrect");
+                request.getRequestDispatcher("/views/Login.jsp").forward(request, response);
+                return;
             }
         } else {
             request.getRequestDispatcher("/views/Login.jsp").forward(request, response);
         }
-         
-        
 
     }
 

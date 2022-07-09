@@ -203,7 +203,7 @@
                             <span class="name-detail">Total Order </span>
                         </div>
                         <div class="statistic-amount">
-                            <span class="amount-detail">134567 </span>
+                            <span class="amount-detail">${orderQuantity}+</span>
                         </div>
                     </div>
                     <div class="statistic-total-order">

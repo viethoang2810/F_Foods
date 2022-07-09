@@ -24,7 +24,7 @@
         <div class="container-fluid">
             <div class="row wrapper">
                 <div class="navigation-col col-md-2" style="background-color: rgb(223, 141, 41); ">
-                    <img src="image/logo_transparent.png" alt="" class="admin-logo">
+                    <img src="../assets/image/logo_transparent.png" alt="" class="admin-logo">
                     <h7 class="account-title">Account</h7>
                     <div class="admin-account admin-block">
                         <i class="fas fa-laugh-wink"></i>
@@ -69,11 +69,12 @@
                         <div class="dashboard-overview">
                             <div class="dashboard-item col-md-5 col-sm-12" style="border-left: 7px solid green;">
                                 <div class="item-infor">
-                                    <span class="item-infor-title item-title">Total Income</span>
-                                    <span class="item-infor-money item-title">100.000VND</span>
+                                   <span class="item-infor-title item-title">Total Income</span>
+                                <input type="hidden" class="income-hidden" value="${income}">
+                                <span class="item-infor-money item-title"></span>
                                 </div>
                                 <div class="item-icon">
-                                    <i class="fa-solid fa-sack-dollar"></i>
+                                    <i class="fa-solid fa-coins"></i>
                                 </div>
                             </div>
                             <div class="dashboard-item col-md-5 col-sm-12"

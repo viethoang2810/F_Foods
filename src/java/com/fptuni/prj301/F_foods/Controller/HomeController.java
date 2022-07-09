@@ -55,6 +55,9 @@ public class HomeController extends HttpServlet {
         }
         
         ArrayList<FoodDTO> listFoodRandom = detail.getFoodArrayRandom(listFood);
+        int orderQuantity = admin.getQuantityOrder();
+        
+        request.setAttribute("orderQuantity", orderQuantity);
         request.setAttribute("randomFood", listFoodRandom);
         request.setAttribute("quantityCustomer", admin.getQuantityCustomer());
         request.setAttribute("quantityFood", food.getQuantityFood());

@@ -46,13 +46,19 @@
                             </div>
                         </div>
                     </div>
+                    <%
+                        String errorMsg = (String) request.getAttribute("errorLogin");
+                        String errorUsername = (String) request.getAttribute("errorSignUp");
+                        String errorRePassword = (String) request.getAttribute("errorRe-Password");
+
+                    %>
                     <div class="col-sm-6 login-actions">
                         <div class="logo">
                             <img src="../assets/image/logo_transparent.png" alt="" class="logo-image img-responsive">
                         </div>
                         <div class="form-wrapper ">
                             <div class="form-process">
-                                <form action="" method="post" class="form-login enable-form">
+                                <form action="${request.contextPath()}" method="post" class="form-login enable-form">
                                     <div class="input-block">
                                         <div class="lable">
                                             <lable class="input-lable" for="username">Username</lable>
@@ -70,13 +76,24 @@
                                             <input type="password" class="input-item input-password"
                                                    placeholder="Enter password" name="password">
                                             <i class="fa-solid fa-eye pass-visible"></i>
+
                                         </div>
                                     </div>
+                                    <%                                        if (errorMsg != null) {
+                                            out.println("<p style='color:white; font-size:1rem;'>" + errorMsg + "</p>");
+                                        }
+                                    %>
                                     <div class="input-submit-btn">
                                         <div class="btn-action">
                                             <input type="submit" name="Login" value="Login" class="submit-btn">
                                         </div>
                                     </div>
+                                    <%
+                                        if (errorUsername != null || errorRePassword != null){
+                                             out.println("<p style='color:white; font-size:1rem;'>Create accoutn doesn't successfull</p>");
+
+                                        }
+                                    %>
                                 </form>
                             </div>
                             <div class="create-account-link">
@@ -85,7 +102,7 @@
                         </div>
                         <div class="form-wrapper disable-form" style="margin-top: -3px;">
                             <div class="form-process">
-                                <form action="${request.contextPath()}"  class="form-login">
+                                <form action="${request.contextPath()}"  class="form-login" method="post">
                                     <div class="input-block">
                                         <div class="lable">
                                             <lable class="input-lable" for="username">Username</lable>
@@ -95,6 +112,11 @@
                                                    placeholder="Enter username" name="username">
                                         </div>
                                     </div>
+                                    <%
+                                            if (errorUsername != null) {
+                                                out.println("<p style='color:white; font-size:1rem;'>" + errorUsername + "</p>");
+                                            }
+                                    %>
                                     <div class="input-block">
                                         <div class="lable">
                                             <lable class="input-lable" for="password ">Password</lable>
@@ -114,8 +136,12 @@
                                                    placeholder="Enter repeat password....." name="confirm">
                                             <i class="fa-solid fa-eye pass-visible"></i>
                                         </div>
-                                        
                                     </div>
+                                    <%
+                                        if (errorRePassword != null) {
+                                            out.println("<p style='color:white; font-size:1rem;'>" + errorRePassword + "</p>");
+                                        }
+                                    %>
                                     <div class="input-block">
                                         <div class="lable">
                                             <lable class="input-lable" for="phonenumber">Your phone number</lable>
@@ -137,7 +163,7 @@
                                     </div>
                                     <div class="input-submit-btn">
                                         <div class="btn-action">
-                                           <input type="submit" name="Signup" value="Sign_Up" class="submit-btn">
+                                            <input type="submit" name="Signup" value="Sign_Up" class="submit-btn">
                                         </div>
                                     </div>
                                 </form>

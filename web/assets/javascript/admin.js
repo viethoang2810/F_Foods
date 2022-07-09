@@ -74,4 +74,18 @@ tableRow.forEach((rowData) => {
     rowData.querySelector('#discount').value = discountFood ;
     rowData.querySelector('#finalPrice').value = formatter.format((parseInt(originalPrice) - parseInt(discountFood)));
 })
-    console.log(formatter.format(300000000)) /* $2,500.00 */
+var totalIncome = document.querySelector('.item-infor-money');
+const hiddenIncome = document.querySelector('.income-hidden').value;
+function formatMoney(n) {
+    var priceFormat;
+    if (n >= 1000) {
+        priceFormat = Math.round(n / 1000) + ".";
+        var unit = n - Math.round(n / 1000) * 1000;
+        if (unit >= 10 && unit <= 99) priceFormat += "0" + unit;
+        else if (unit >= 0 && unit <= 9) priceFormat += "00" + unit;
+        else priceFormat += unit;
+    } else priceFormat = n;
+    return priceFormat + " VNĐ";
+}
+totalIncome.innerHTML= formatMoney(parseInt(hiddenIncome));
+console.log(totalIncome);
