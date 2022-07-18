@@ -2,7 +2,7 @@
 This project is an assignment of PRJ301 subject
 ## Case Study
 
-#### Project Name: Sakura-shop.
+#### Project Name: F_Foods.
 #### Purpose: *Provide online food and beverage ordering service (Hamburger, chicken, bread, tea, coffee, milk tea).*
 #### User object: *Who need to order food within HCM City.*
 #### Features:
